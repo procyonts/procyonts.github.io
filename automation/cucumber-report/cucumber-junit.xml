@@ -1,718 +1,1217 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="630.389" tests="30" skipped="0" failures="13" errors="0">
-<testcase classname="Login Feature" name="Valid user logs in successfully" time="14.131">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="73.918">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-And User navigates to client creation page and adds new client..............passed
-]]></system-out>
-</testcase>
-<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="31.418">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@role='option' or @role='menuitem' or contains(@class, 'cursor-pointer')] (tried for 10 second(s) with 500 milliseconds interval)
+<testsuite name="Cucumber" time="14.003" tests="30" skipped="0" failures="30" errors="0">
+<testcase classname="Login Feature" name="Valid user logs in successfully" time="2.301">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45949}, goog:processID: 1854, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45949/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b45d32b2e46e908b786373f50e1f9409">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@role='option' or @role='menuitem' or contains(@class, 'cursor-pointer')] (tried for 10 second(s) with 500 milliseconds interval)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45949}, goog:processID: 1854, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45949/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b45d32b2e46e908b786373f50e1f9409
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.ContactPage.selectComboboxOption(ContactPage.java:105)
-	at com.xats.automation.tests.pages.ContactPage.createNewContact(ContactPage.java:66)
-	at com.xats.automation.tests.stepdefinitions.ContactSteps.user_navigates_to_client_and_adds_contact(ContactSteps.java:13)
-	at ?.User navigates to client section and adds a new contact(file:///runner/_work/automation/automation/src/test/resources/features/03_ContactCreation.feature:10)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When User navigates to client section and adds a new contact................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="0.411">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+And User navigates to client creation page and adds new client..............skipped
+]]></system-out>
+</testcase>
+<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="0.426">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When User navigates to client section and adds a new contact................skipped
 Then New contact should be created successfully.............................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Job Creation" name="Create a new Job" time="42.728">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.id: country_id (tried for 12 second(s) with 500 milliseconds interval)
+<testcase classname="Job Creation" name="Create a new Job" time="0.424">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40779}, goog:processID: 2066, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40779/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8556e9bbd1442d9cb06b353e8302a725">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: country_id (tried for 12 second(s) with 500 milliseconds interval)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40779}, goog:processID: 2066, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40779/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8556e9bbd1442d9cb06b353e8302a725
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.JobCreationPage.selectDropdown(JobCreationPage.java:107)
-	at com.xats.automation.tests.pages.JobCreationPage.createNewJob(JobCreationPage.java:165)
-	at com.xats.automation.tests.stepdefinitions.JobCreationSteps.user_navigates_to_Job_and_adds_job(JobCreationSteps.java:13)
-	at ?.User navigates to job section and adds a new job(file:///runner/_work/automation/automation/src/test/resources/features/04_JobCreation.feature:10)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When User navigates to job section and adds a new job.......................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When User navigates to job section and adds a new job.......................skipped
 Then New job should be created successfully.................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Creation" name="Create adds a new candidate" time="18.688">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/main/section/div/div/div[2]/div/div[2]/form/div[1]/div/div[2]/input (tried for 12 second(s) with 500 milliseconds interval)
+<testcase classname="Candidate Creation" name="Create adds a new candidate" time="0.393">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36297}, goog:processID: 2272, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36297/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7db5ae098173a7b87a42a3e990e62a3b">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/main/section/div/div/div[2]/div/div[2]/form/div[1]/div/div[2]/input (tried for 12 second(s) with 500 milliseconds interval)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36297}, goog:processID: 2272, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36297/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7db5ae098173a7b87a42a3e990e62a3b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.CandidateCreationPage.safeType(CandidateCreationPage.java:151)
-	at com.xats.automation.tests.pages.CandidateCreationPage.createNewCandidate(CandidateCreationPage.java:78)
-	at com.xats.automation.tests.stepdefinitions.CandidateCreationSteps.user_navigates_add_a_candidate(CandidateCreationSteps.java:13)
-	at ?.User adds a new candidate(file:///runner/_work/automation/automation/src/test/resources/features/05_CandidateCreation.feature:9)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User adds a new candidate..............................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User adds a new candidate..............................................skipped
 Then New candidate should be created successfully...........................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="11.173">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Add a new note" time="21.843">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-And user adds a note........................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Edit the existing note" time="29.616">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-And user edits the note.....................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Pin the note" time="17.537">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-And user pins the note......................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Delete the note" time="17.555">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-And user deletes the note...................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Upload a new document" time="19.796">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-And user uploads a document.................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Delete the uploaded document" time="19.377">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-And user deletes the document...............................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Submit a candidate" time="27.651">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user submit candidate..................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Job In Detail View Actions" name="Create a Task" time="29.002">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user create a task.....................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="user adds a cal logs" time="23.825">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.id: open-call-log-dialog-btn (tried for 10 second(s) with 500 milliseconds interval)
+<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="0.421">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45085}, goog:processID: 4285, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45085/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3a7e52558ed6d03887ceb63eb0dc750d">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: open-call-log-dialog-btn (tried for 10 second(s) with 500 milliseconds interval)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45085}, goog:processID: 4285, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45085/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3a7e52558ed6d03887ceb63eb0dc750d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.CandidateInDetailViewPage.jsClick(CandidateInDetailViewPage.java:241)
-	at com.xats.automation.tests.pages.CandidateInDetailViewPage.callLogs(CandidateInDetailViewPage.java:248)
-	at com.xats.automation.tests.stepdefinitions.CandidateInDetailViewSteps.user_add_a_call_logs(CandidateInDetailViewSteps.java:18)
-	at ?.User adds a call logs(file:///runner/_work/automation/automation/src/test/resources/features/07_CandidateInDetailView.feature:12)
-]]>
-</failure>
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-When User adds a call logs..................................................failed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Add a new note" time="22.792">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-And user adds a note for can................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Edit the existing note" time="24.218">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-And user edits the note for can.............................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Delete the note" time="17.687">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-And user deletes the note for can...........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Upload a new document" time="19.802">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-And user uploads a document for can.........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="19.225">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-And user deletes the document for can.......................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Create a Task" time="25.22">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-When user create a task for can.............................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Submission page" name="Navigate to submission page" time="11.528">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3aed4271724b26b13d0904b141817b85, clickElement {id=f.F093D27009DF98769236242221533A8F.d.9D2276B8B4EF5A8F4A880CB4BD3DF3BB.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36031}, goog:processID: 5733, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36031/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (3aed4271724b26b13d0904b141817b85)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 3aed4271724b26b13d0904b141817b85">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3aed4271724b26b13d0904b141817b85, clickElement {id=f.F093D27009DF98769236242221533A8F.d.9D2276B8B4EF5A8F4A880CB4BD3DF3BB.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36031}, goog:processID: 5733, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36031/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (3aed4271724b26b13d0904b141817b85)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 3aed4271724b26b13d0904b141817b85
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:12)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Add a new note" time="11.48">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Job In Detail View Actions" name="Add a new note" time="0.396">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c6295647a3b47133b29f84ded5a12653, clickElement {id=f.F017ADC9F7D5FF3150EA31B74BDD5BA9.d.DE3699482A0E1AC1484A2823C63907B1.e.50}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40963}, goog:processID: 5883, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40963/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (c6295647a3b47133b29f84ded5a12653)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: c6295647a3b47133b29f84ded5a12653">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c6295647a3b47133b29f84ded5a12653, clickElement {id=f.F017ADC9F7D5FF3150EA31B74BDD5BA9.d.DE3699482A0E1AC1484A2823C63907B1.e.50}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40963}, goog:processID: 5883, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40963/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (c6295647a3b47133b29f84ded5a12653)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: c6295647a3b47133b29f84ded5a12653
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:17)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+And user adds a note........................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Edit the existing note" time="0.398">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+And user edits the note.....................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Pin the note" time="0.408">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+And user pins the note......................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Delete the note" time="0.403">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+And user deletes the note...................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Upload a new document" time="0.383">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+And user uploads a document.................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Delete the uploaded document" time="0.374">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+And user deletes the document...............................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Submit a candidate" time="0.384">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user submit candidate..................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Create a Task" time="0.378">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user create a task.....................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="user adds a cal logs" time="0.42">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+When User adds a call logs..................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Add a new note" time="0.391">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+And user adds a note for can................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Edit the existing note" time="0.386">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+And user edits the note for can.............................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Delete the note" time="0.365">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+And user deletes the note for can...........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Upload a new document" time="0.37">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+And user uploads a document for can.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="0.382">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+And user deletes the document for can.......................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Create a Task" time="0.392">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+When user create a task for can.............................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Navigate to submission page" time="0.397">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Add a new note" time="0.397">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And user adds a note in submission..........................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Edit the existing note" time="11.364">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Edit the existing note" time="0.399">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fac1c92f322d19a1756dfb2a8003f1dc, clickElement {id=f.6F4A61AC3C0E00C7A7D357C9E53A894D.d.FDFE6872A224602A7F84055143060B55.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44515}, goog:processID: 6024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44515/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (fac1c92f322d19a1756dfb2a8003f1dc)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: fac1c92f322d19a1756dfb2a8003f1dc">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fac1c92f322d19a1756dfb2a8003f1dc, clickElement {id=f.6F4A61AC3C0E00C7A7D357C9E53A894D.d.FDFE6872A224602A7F84055143060B55.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44515}, goog:processID: 6024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44515/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (fac1c92f322d19a1756dfb2a8003f1dc)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: fac1c92f322d19a1756dfb2a8003f1dc
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:23)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And user edits the note in submission.......................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Pin the note" time="11.569">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Pin the note" time="0.376">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9d058a4975c19ff331d36e8c9ef2daf4, clickElement {id=f.893412D960B91340ACE1825CF667CC8C.d.2C804794E7B0FFEA299E8069B6E4889B.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37107}, goog:processID: 6170, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37107/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (9d058a4975c19ff331d36e8c9ef2daf4)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 9d058a4975c19ff331d36e8c9ef2daf4">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9d058a4975c19ff331d36e8c9ef2daf4, clickElement {id=f.893412D960B91340ACE1825CF667CC8C.d.2C804794E7B0FFEA299E8069B6E4889B.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37107}, goog:processID: 6170, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37107/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (9d058a4975c19ff331d36e8c9ef2daf4)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 9d058a4975c19ff331d36e8c9ef2daf4
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:29)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And user pins the note in submission........................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the note" time="11.35">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Delete the note" time="0.392">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e9f369152e662e3eb4ece6f88f19ff2f, clickElement {id=f.775EA82DEBBE1CD4DDF6C622E6BE3204.d.2FA60ADBEFF9B5187216F20C38FEEB84.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41065}, goog:processID: 6316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41065/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (e9f369152e662e3eb4ece6f88f19ff2f)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: e9f369152e662e3eb4ece6f88f19ff2f">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e9f369152e662e3eb4ece6f88f19ff2f, clickElement {id=f.775EA82DEBBE1CD4DDF6C622E6BE3204.d.2FA60ADBEFF9B5187216F20C38FEEB84.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41065}, goog:processID: 6316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41065/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (e9f369152e662e3eb4ece6f88f19ff2f)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: e9f369152e662e3eb4ece6f88f19ff2f
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:35)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And user deletes the note in the submission.................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Upload a new document" time="11.301">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Upload a new document" time="0.376">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a5b37524b03acd55b731f283e442f1f9, clickElement {id=f.B4C90AE289915D7F9E2A4FE3DEA643D5.d.4B5FDAD7FDC55AA9ACA4602F608AF398.e.50}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39555}, goog:processID: 6459, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39555/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (a5b37524b03acd55b731f283e442f1f9)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: a5b37524b03acd55b731f283e442f1f9">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a5b37524b03acd55b731f283e442f1f9, clickElement {id=f.B4C90AE289915D7F9E2A4FE3DEA643D5.d.4B5FDAD7FDC55AA9ACA4602F608AF398.e.50}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39555}, goog:processID: 6459, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39555/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (a5b37524b03acd55b731f283e442f1f9)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: a5b37524b03acd55b731f283e442f1f9
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:41)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And user uploads a document in submission...................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the uploaded document" time="11.519">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Delete the uploaded document" time="0.403">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3d991ba49ce6ff6e224c890c98eb5c45, clickElement {id=f.9F2C933A6322FFFB73A362042E68FBBE.d.1F63E8546F045868F443477E903A92BF.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41601}, goog:processID: 6600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41601/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (3d991ba49ce6ff6e224c890c98eb5c45)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 3d991ba49ce6ff6e224c890c98eb5c45">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3d991ba49ce6ff6e224c890c98eb5c45, clickElement {id=f.9F2C933A6322FFFB73A362042E68FBBE.d.1F63E8546F045868F443477E903A92BF.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41601}, goog:processID: 6600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41601/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (3d991ba49ce6ff6e224c890c98eb5c45)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 3d991ba49ce6ff6e224c890c98eb5c45
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:47)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And user deletes the document in submission.................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Interview creation" time="11.311">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Interview creation" time="0.393">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e9cb7a02b6972e800d50cd703b534eb0, clickElement {id=f.60F8853F8FDA92A1C4143E2800893754.d.9D403F85D58852680CB602B50EC14416.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43499}, goog:processID: 6742, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43499/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (e9cb7a02b6972e800d50cd703b534eb0)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: e9cb7a02b6972e800d50cd703b534eb0">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e9cb7a02b6972e800d50cd703b534eb0, clickElement {id=f.60F8853F8FDA92A1C4143E2800893754.d.9D403F85D58852680CB602B50EC14416.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43499}, goog:processID: 6742, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43499/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (e9cb7a02b6972e800d50cd703b534eb0)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: e9cb7a02b6972e800d50cd703b534eb0
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:53)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 And User creates a interview................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Create a Task" time="11.408">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+<testcase classname="Submission page" name="Create a Task" time="0.394">
+<failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7e3af05b1a4dab5d6e04b986f8d437c0, clickElement {id=f.E17CB7AAE17E7FF6EC28367DDED5663B.d.DE628E7FEE8F4DF95435A0FA6CE364AB.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43387}, goog:processID: 6886, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43387/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (7e3af05b1a4dab5d6e04b986f8d437c0)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 7e3af05b1a4dab5d6e04b986f8d437c0">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.40)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]">
+<![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 145
+Current browser version is 143.0.7499.40 with binary path /opt/google/chrome/chrome 
+Host info: host: 'self-hosted-runner-deployment-phxjn-fvb66', ip: '100.96.147.110'
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '17.0.18'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7e3af05b1a4dab5d6e04b986f8d437c0, clickElement {id=f.E17CB7AAE17E7FF6EC28367DDED5663B.d.DE628E7FEE8F4DF95435A0FA6CE364AB.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43387}, goog:processID: 6886, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43387/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (7e3af05b1a4dab5d6e04b986f8d437c0)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 7e3af05b1a4dab5d6e04b986f8d437c0
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --no-sandbox, --disable-dev-shm-usage, --disable-gpu, --window-size=1920,1080], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
-	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ?.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.xats.automation.tests.factory.DriverFactory.initializeDriver(DriverFactory.java:42)
+	at com.xats.automation.tests.Hooks.Hooks.setUp(Hooks.java:15)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................failed
+Given User is on login page.................................................skipped
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+When user navigates to job detail view......................................skipped
+When user navigates submission page.........................................skipped
 When user create a task in submission.......................................skipped
 ]]></system-out>
 </testcase>
