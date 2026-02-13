@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="720.341" tests="30" skipped="0" failures="4" errors="0">
-<testcase classname="Login Feature" name="Valid user logs in successfully" time="12.601">
+<testsuite name="Cucumber" time="732.114" tests="30" skipped="0" failures="8" errors="0">
+<testcase classname="Login Feature" name="Valid user logs in successfully" time="14.754">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -8,7 +8,7 @@ And User clicks on login button.............................................pass
 Then User should land on dashboard..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="33.323">
+<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="37.959">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -17,17 +17,37 @@ Then User should land on dashboard..........................................pass
 And User navigates to client creation page and adds new client..............passed
 ]]></system-out>
 </testcase>
-<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="38.885">
+<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="31.915">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@role='option' or @role='menuitem' or contains(@class, 'cursor-pointer')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43281}, goog:processID: 1819, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43281/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 514b53323706e91e4c90c002aabab759">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@role='option' or @role='menuitem' or contains(@class, 'cursor-pointer')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43281}, goog:processID: 1819, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43281/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 514b53323706e91e4c90c002aabab759
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.ContactPage.selectComboboxOption(ContactPage.java:107)
+	at com.xats.automation.tests.pages.ContactPage.createNewContact(ContactPage.java:67)
+	at com.xats.automation.tests.stepdefinitions.ContactSteps.user_navigates_to_client_and_adds_contact(ContactSteps.java:13)
+	at ✽.User navigates to client section and adds a new contact(file:///runner/_work/automation/automation/src/test/resources/features/03_ContactCreation.feature:10)
+]]>
+</failure>
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
 And User clicks on login button.............................................passed
 Then User should land on dashboard..........................................passed
-When User navigates to client section and adds a new contact................passed
-Then New contact should be created successfully.............................passed
+When User navigates to client section and adds a new contact................failed
+Then New contact should be created successfully.............................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Job Creation" name="Create a new Job" time="74.418">
+<testcase classname="Job Creation" name="Create a new Job" time="94.687">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -37,7 +57,7 @@ When User navigates to job section and adds a new job.......................pass
 Then New job should be created successfully.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Creation" name="Create adds a new candidate" time="23.91">
+<testcase classname="Candidate Creation" name="Create adds a new candidate" time="24.944">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -46,7 +66,7 @@ Then User adds a new candidate..............................................pass
 Then New candidate should be created successfully...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="11.021">
+<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="12.067">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -54,7 +74,7 @@ And User clicks on login button.............................................pass
 When user navigates to job detail view......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Add a new note" time="21.069">
+<testcase classname="Job In Detail View Actions" name="Add a new note" time="22.727">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -63,7 +83,7 @@ When user navigates to job detail view......................................pass
 And user adds a note........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Edit the existing note" time="29.281">
+<testcase classname="Job In Detail View Actions" name="Edit the existing note" time="30.215">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -72,7 +92,7 @@ When user navigates to job detail view......................................pass
 And user edits the note.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Pin the note" time="17.345">
+<testcase classname="Job In Detail View Actions" name="Pin the note" time="18.024">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -81,7 +101,7 @@ When user navigates to job detail view......................................pass
 And user pins the note......................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Delete the note" time="17.665">
+<testcase classname="Job In Detail View Actions" name="Delete the note" time="18.3">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -90,7 +110,7 @@ When user navigates to job detail view......................................pass
 And user deletes the note...................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Upload a new document" time="20.136">
+<testcase classname="Job In Detail View Actions" name="Upload a new document" time="20.547">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -99,7 +119,7 @@ When user navigates to job detail view......................................pass
 And user uploads a document.................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Delete the uploaded document" time="20.308">
+<testcase classname="Job In Detail View Actions" name="Delete the uploaded document" time="20.273">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -108,7 +128,7 @@ When user navigates to job detail view......................................pass
 And user deletes the document...............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Submit a candidate" time="28.394">
+<testcase classname="Job In Detail View Actions" name="Submit a candidate" time="28.643">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -117,7 +137,7 @@ When user navigates to job detail view......................................pass
 When user submit candidate..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Create a Task" time="28.118">
+<testcase classname="Job In Detail View Actions" name="Create a Task" time="29.871">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -126,7 +146,7 @@ When user navigates to job detail view......................................pass
 When user create a task.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="user adds a cal logs" time="21.628">
+<testcase classname="candidateInDetailView" name="user adds a cal logs" time="22.404">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -136,7 +156,7 @@ When user navigates to candidateInDetailView................................pass
 When User adds a call logs..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Add a new note" time="23.079">
+<testcase classname="candidateInDetailView" name="Add a new note" time="23.599">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -146,7 +166,7 @@ When user navigates to candidateInDetailView................................pass
 And user adds a note for can................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Edit the existing note" time="24.533">
+<testcase classname="candidateInDetailView" name="Edit the existing note" time="24.89">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -156,7 +176,7 @@ When user navigates to candidateInDetailView................................pass
 And user edits the note for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the note" time="18.347">
+<testcase classname="candidateInDetailView" name="Delete the note" time="18.168">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -166,7 +186,7 @@ When user navigates to candidateInDetailView................................pass
 And user deletes the note for can...........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Upload a new document" time="19.642">
+<testcase classname="candidateInDetailView" name="Upload a new document" time="20.139">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -176,7 +196,7 @@ When user navigates to candidateInDetailView................................pass
 And user uploads a document for can.........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="20.674">
+<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="20.009">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -186,7 +206,7 @@ When user navigates to candidateInDetailView................................pass
 And user deletes the document for can.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Create a Task" time="25.65">
+<testcase classname="candidateInDetailView" name="Create a Task" time="25.659">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -196,27 +216,36 @@ When user navigates to candidateInDetailView................................pass
 When user create a task for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Navigate to submission page" time="11.662">
+<testcase classname="Submission page" name="Navigate to submission page" time="18.062">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Add a new note" time="12.282">
 <failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9c09a1ca0ca83167e470687365b96450, clickElement {id=f.53AB5E1F638C4CD811DD8D2F95108C33.d.1372AAE1C5473EF8463AEAE995E041ED.e.50}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40347}, goog:processID: 7385, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40347/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (9c09a1ca0ca83167e470687365b96450)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 9c09a1ca0ca83167e470687365b96450">
+Command: [a25508b632bcfbf3e7672f8d259e670f, clickElement {id=f.3990B3078334DEEEC30041C347B4FF57.d.96276FDEC9A7E76E9D20470ACC4C6B17.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34227}, goog:processID: 7078, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34227/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (a25508b632bcfbf3e7672f8d259e670f)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: a25508b632bcfbf3e7672f8d259e670f">
 <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9c09a1ca0ca83167e470687365b96450, clickElement {id=f.53AB5E1F638C4CD811DD8D2F95108C33.d.1372AAE1C5473EF8463AEAE995E041ED.e.50}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40347}, goog:processID: 7385, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40347/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (9c09a1ca0ca83167e470687365b96450)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 9c09a1ca0ca83167e470687365b96450
+Command: [a25508b632bcfbf3e7672f8d259e670f, clickElement {id=f.3990B3078334DEEEC30041C347B4FF57.d.96276FDEC9A7E76E9D20470ACC4C6B17.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34227}, goog:processID: 7078, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34227/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (a25508b632bcfbf3e7672f8d259e670f)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: a25508b632bcfbf3e7672f8d259e670f
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -231,7 +260,7 @@ Session ID: 9c09a1ca0ca83167e470687365b96450
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
 	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
 	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ✽.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:12)
+	at ✽.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:17)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -240,49 +269,59 @@ When User enters username and password from config file.....................pass
 And User clicks on login button.............................................passed
 When user navigates to job detail view......................................passed
 When user navigates submission page.........................................failed
+And user adds a note in submission..........................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Add a new note" time="27.677">
+<testcase classname="Submission page" name="Edit the existing note" time="30.314">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.cssSelector: [id^='edit-note-'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46697}, goog:processID: 7267, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46697/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 054470b9f9eef3db225f14946ddb5b88">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: [id^='edit-note-'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46697}, goog:processID: 7267, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46697/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 054470b9f9eef3db225f14946ddb5b88
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionEditNotes(CandidateSubmissionPage.java:122)
+	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_edits_the_note(CandidateSubmissionSteps.java:30)
+	at ✽.user edits the note in submission(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:24)
+]]>
+</failure>
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
 And User clicks on login button.............................................passed
 When user navigates to job detail view......................................passed
 When user navigates submission page.........................................passed
-And user adds a note in submission..........................................passed
+And user edits the note in submission.......................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Edit the existing note" time="29.048">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................passed
-And user edits the note in submission.......................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Submission page" name="Pin the note" time="12.646">
+<testcase classname="Submission page" name="Pin the note" time="12.092">
 <failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [be320f2d69132ac5cc1111ab4011100b, clickElement {id=f.FE4AC3D7DFB4F2443E8769A3FD2931BC.d.D7104F6DA586A5238E78829F9B1B88D4.e.51}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37097}, goog:processID: 8088, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37097/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (be320f2d69132ac5cc1111ab4011100b)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: be320f2d69132ac5cc1111ab4011100b">
+Command: [70bbec9b3f62e356b7ff6bd99dd36813, clickElement {id=f.D34FF91B62F45F27C10CACB8498C39CB.d.DDD8C30F61FD90273EE632A1C3E08744.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38753}, goog:processID: 7524, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38753/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (70bbec9b3f62e356b7ff6bd99dd36813)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: 70bbec9b3f62e356b7ff6bd99dd36813">
 <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [be320f2d69132ac5cc1111ab4011100b, clickElement {id=f.FE4AC3D7DFB4F2443E8769A3FD2931BC.d.D7104F6DA586A5238E78829F9B1B88D4.e.51}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37097}, goog:processID: 8088, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37097/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (be320f2d69132ac5cc1111ab4011100b)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: be320f2d69132ac5cc1111ab4011100b
+Command: [70bbec9b3f62e356b7ff6bd99dd36813, clickElement {id=f.D34FF91B62F45F27C10CACB8498C39CB.d.DDD8C30F61FD90273EE632A1C3E08744.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38753}, goog:processID: 7524, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38753/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (70bbec9b3f62e356b7ff6bd99dd36813)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: 70bbec9b3f62e356b7ff6bd99dd36813
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -309,37 +348,74 @@ When user navigates submission page.........................................fail
 And user pins the note in submission........................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the note" time="22.108">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................passed
-And user deletes the note in the submission.................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Submission page" name="Upload a new document" time="11.743">
+<testcase classname="Submission page" name="Delete the note" time="12.09">
 <failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [18ebeab0e6b6b7beea21bc228eb15e9f, clickElement {id=f.8F715D7206E8FEC001DBBECBC7657D82.d.A72987633D71AC468955E2E6684F3D7A.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41011}, goog:processID: 8532, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41011/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (18ebeab0e6b6b7beea21bc228eb15e9f)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 18ebeab0e6b6b7beea21bc228eb15e9f">
+Command: [1d8521344664e52d585bf732be4a659d, clickElement {id=f.996230E4DF7A5273A83EB40749AB3580.d.9AEB1ADE89FA341AFB04BF8085FE700E.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41649}, goog:processID: 7714, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41649/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (1d8521344664e52d585bf732be4a659d)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: 1d8521344664e52d585bf732be4a659d">
 <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [18ebeab0e6b6b7beea21bc228eb15e9f, clickElement {id=f.8F715D7206E8FEC001DBBECBC7657D82.d.A72987633D71AC468955E2E6684F3D7A.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41011}, goog:processID: 8532, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41011/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (18ebeab0e6b6b7beea21bc228eb15e9f)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: 18ebeab0e6b6b7beea21bc228eb15e9f
+Command: [1d8521344664e52d585bf732be4a659d, clickElement {id=f.996230E4DF7A5273A83EB40749AB3580.d.9AEB1ADE89FA341AFB04BF8085FE700E.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41649}, goog:processID: 7714, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41649/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (1d8521344664e52d585bf732be4a659d)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: 1d8521344664e52d585bf732be4a659d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
+	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
+	at ✽.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:35)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................failed
+And user deletes the note in the submission.................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Upload a new document" time="12.013">
+<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
+  (Session info: chrome=143.0.7499.40)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [96a2a9acdcdda249736c328d00c15c0a, clickElement {id=f.47277EB43A1E935785871B1997DA5D60.d.F5D50AD405827C689D1F50030B8C7B22.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45201}, goog:processID: 7902, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45201/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (96a2a9acdcdda249736c328d00c15c0a)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: 96a2a9acdcdda249736c328d00c15c0a">
+<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=143.0.7499.40)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [96a2a9acdcdda249736c328d00c15c0a, clickElement {id=f.47277EB43A1E935785871B1997DA5D60.d.F5D50AD405827C689D1F50030B8C7B22.e.51}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45201}, goog:processID: 7902, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45201/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (96a2a9acdcdda249736c328d00c15c0a)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: 96a2a9acdcdda249736c328d00c15c0a
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -366,27 +442,56 @@ When user navigates submission page.........................................fail
 And user uploads a document in submission...................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the uploaded document" time="11.831">
+<testcase classname="Submission page" name="Delete the uploaded document" time="29.567">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/main/main/div/div[4]/div[2]/div/div/div/div[1]/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43985}, goog:processID: 8097, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43985/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d5fd1ea164240e51da1b215888b72366">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/main/main/div/div[4]/div[2]/div/div/div/div[1]/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43985}, goog:processID: 8097, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43985/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d5fd1ea164240e51da1b215888b72366
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.CandidateSubmissionPage.deleteDocument(CandidateSubmissionPage.java:210)
+	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_deletes_the_document(CandidateSubmissionSteps.java:53)
+	at ✽.user deletes the document in submission(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:48)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user deletes the document in submission.................................failed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Interview creation" time="11.846">
 <failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [efa70b04514e88110cd06d8f342d4ee9, clickElement {id=f.FA0F890FA18F5DB48C9B20BCBAB42D22.d.1E5A54012AF6E3B632E4959DE96371DA.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35231}, goog:processID: 8726, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35231/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (efa70b04514e88110cd06d8f342d4ee9)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: efa70b04514e88110cd06d8f342d4ee9">
+Command: [e47c9d8b586b4775e4a463b2e889ef6c, clickElement {id=f.C9221656A5C4D247D148281E126E253D.d.B27A3600477A524967CB746AD123651E.e.50}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38053}, goog:processID: 8355, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38053/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (e47c9d8b586b4775e4a463b2e889ef6c)] -&gt; xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: e47c9d8b586b4775e4a463b2e889ef6c">
 <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=143.0.7499.40)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-60-generic', java.version: '21.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [efa70b04514e88110cd06d8f342d4ee9, clickElement {id=f.FA0F890FA18F5DB48C9B20BCBAB42D22.d.1E5A54012AF6E3B632E4959DE96371DA.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35231}, goog:processID: 8726, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35231/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (efa70b04514e88110cd06d8f342d4ee9)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
-Session ID: efa70b04514e88110cd06d8f342d4ee9
+Command: [e47c9d8b586b4775e4a463b2e889ef6c, clickElement {id=f.C9221656A5C4D247D148281E126E253D.d.B27A3600477A524967CB746AD123651E.e.50}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38053}, goog:processID: 8355, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38053/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (e47c9d8b586b4775e4a463b2e889ef6c)] -> xpath: /html/body/div[2]/main/div/div/div[4]/div[2]/div[2]/div[1]/a/span]
+Session ID: e47c9d8b586b4775e4a463b2e889ef6c
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -401,7 +506,7 @@ Session ID: efa70b04514e88110cd06d8f342d4ee9
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
 	at com.xats.automation.tests.pages.CandidateSubmissionPage.submissionId(CandidateSubmissionPage.java:67)
 	at com.xats.automation.tests.stepdefinitions.CandidateSubmissionSteps.user_navigates_to_submission_page(CandidateSubmissionSteps.java:17)
-	at ✽.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:47)
+	at ✽.user navigates submission page(file:///runner/_work/automation/automation/src/test/resources/features/08_CandidateSubmission.feature:53)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -410,20 +515,10 @@ When User enters username and password from config file.....................pass
 And User clicks on login button.............................................passed
 When user navigates to job detail view......................................passed
 When user navigates submission page.........................................failed
-And user deletes the document in submission.................................skipped
+And User creates a interview................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Interview creation" time="31.573">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates submission page.........................................passed
-And User creates a interview................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Submission page" name="Create a Task" time="31.785">
+<testcase classname="Submission page" name="Create a Task" time="33.666">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
