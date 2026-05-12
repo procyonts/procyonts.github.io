@@ -13,7 +13,6 @@ Feature: candidateInDetailView
 
   @AddNote
   Scenario: Add a new note
-     When user navigates to engagement
     And user adds a note for can
 
   @EditNote
@@ -34,5 +33,4 @@ Feature: candidateInDetailView
 
   @taskCreation
   Scenario: Create a Task
-    When user navigates to engagement
     When user create a task for can
