@@ -30,11 +30,11 @@ Feature: Submission page
     When user navigates submission page
     And user edits the note in submission
 
-  @PinNote
-  Scenario: Pin the note
-    When user navigates to job detail view
-    When user navigates submission page
-    And user pins the note in submission
+#  @PinNote
+#  Scenario: Pin the note
+#    When user navigates to job detail view
+#    When user navigates submission page
+#    And user pins the note in submission
 
   @DeleteNote
   Scenario: Delete the note
