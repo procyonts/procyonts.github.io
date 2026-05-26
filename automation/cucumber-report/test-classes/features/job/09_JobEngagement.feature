@@ -22,6 +22,18 @@ Background:
     When user navigates to engagement tab
     And user create a task
 
+  @editTask
+  Scenario: Edit a task in Task Manager
+    When user navigates to job detail view
+    When user navigates to engagement tab
+    And user edits the task
+
+  @deleteTask
+  Scenario: Delete a task in Task Manager
+    When user navigates to job detail view
+    When user navigates to engagement tab
+    And user deletes the task
+
   @Notes
   Scenario: Create notes
     When user navigates to job detail view
@@ -52,6 +64,8 @@ Background:
     When user navigates to job detail view
     When user navigates to engagement tab
     And user deletes the document
+
+
 
 
 

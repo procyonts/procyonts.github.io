@@ -18,6 +18,18 @@ Feature: Submission page
     When user navigates submission page
     When user create a task in submission
 
+  @editTask
+  Scenario: Edit a Task in submission
+    When user navigates to job detail view
+    When user navigates submission page
+    And user edits the task in submission
+
+  @deleteTask
+  Scenario: Delete the task in submission
+    When user navigates to job detail view
+    When user navigates submission page
+    And user deletes the task in submission
+
   @AddNote
   Scenario: Add a new note
     When user navigates to job detail view
@@ -53,6 +65,8 @@ Feature: Submission page
     When user navigates to job detail view
     When user navigates submission page
     And user deletes the document in submission
+
+
 
 #  @interview
 #    Scenario: Interview creation

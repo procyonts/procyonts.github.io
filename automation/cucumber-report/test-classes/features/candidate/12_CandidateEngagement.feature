@@ -15,6 +15,17 @@ Feature: candidateInDetailView
     When user navigates to engagement
     When user create a task for can
 
+  @editTask
+  Scenario: Edit a Task
+    When user navigates to engagement
+    And user edits the task for can
+
+  @deleteTask
+  Scenario: Delete the task
+    When user navigates to engagement
+    And user deletes the task for can
+
+
   @AddNote
   Scenario: Add a new note
      When user navigates to engagement
@@ -39,4 +50,5 @@ Feature: candidateInDetailView
   Scenario: Delete the uploaded document
     When user navigates to engagement
     And user deletes the document for can
+
 
