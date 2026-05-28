@@ -13,3 +13,9 @@ Background:
     And user selects a candidate and clicks next
     And user fills the candidate submission form
     Then user completes the final submission
+
+  @EditMetadata
+  Scenario: Edit Submission Metadata
+    When user navigates to job detail view
+    When user navigates to submissionPage
+    And user edits the submission metadata expected ctc
