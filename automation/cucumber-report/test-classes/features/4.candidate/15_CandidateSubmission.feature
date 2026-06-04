@@ -1,4 +1,4 @@
-@candidateSubmission
+@candidateSubmissionEngagement
 Feature: Submission page
 
   Background:
