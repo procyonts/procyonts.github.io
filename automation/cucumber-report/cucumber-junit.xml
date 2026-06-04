@@ -1,18 +1,473 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="98.749" tests="4" skipped="0" failures="1" errors="0">
-<testcase classname="Interview Pipeline Management" name="Initialize candidate interview pipeline successfully" time="39.849">
+<testsuite name="Cucumber" time="1,320.488" tests="56" skipped="0" failures="1" errors="0">
+<testcase classname="User Registration" name="Successfully register a new user" time="10.03">
+<system-out><![CDATA[
+Given User is on the signup page............................................passed
+When User fills the registration form with details from signup properties...passed
+And User accepts the terms and clicks Create Account........................passed
+Then User should see a success message or be redirected to the dashboard....passed
+]]></system-out>
+</testcase>
+<testcase classname="Password Recovery" name="Successfully request a password reset link" time="6.753">
+<system-out><![CDATA[
+Given User is on the forgot password page...................................passed
+When User enters email from "signup" properties and clicks Send Reset Link..passed
+Then User should see a confirmation for the reset link......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login Feature" name="Valid user logs in successfully" time="2.333">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="65.954">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+And User navigates to client creation page and adds new client..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="26.166">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to client section and adds a new contact................passed
+Then New contact should be created successfully.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="clientInDetailView" name="Add a new note" time="15.84">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to clientInDetailView...................................passed
+When user navigates to engagement for client................................passed
+And user adds a note for client.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="clientInDetailView" name="Edit the existing note" time="17.242">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to clientInDetailView...................................passed
+When user navigates to engagement for client................................passed
+And user edits the note for client..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="clientInDetailView" name="Delete the note" time="13.402">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to clientInDetailView...................................passed
+When user navigates to engagement for client................................passed
+And user deletes the note for client........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="clientInDetailView" name="Upload a new document" time="18.684">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to clientInDetailView...................................passed
+When user navigates to engagement for client................................passed
+And user uploads a document for client......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="clientInDetailView" name="Delete the uploaded document" time="15.044">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to clientInDetailView...................................passed
+When user navigates to engagement for client................................passed
+And user deletes the document for client....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Client Edit" name="Navigate to client and edit two fields" time="15.892">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to first client.........................................passed
+And user clicks edit button on client.......................................passed
+And user edits two fields of client.........................................passed
+And user scrolls and saves client changes...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job Creation" name="Create a new Job" time="74.578">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to job section and adds a new job.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="10.827">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Create a task in Task Manager" time="32.276">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user create a task......................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Edit a task in Task Manager" time="36.041">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user edits the task.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Delete a task in Task Manager" time="27.738">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user deletes the task...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Create notes" time="26.467">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user adds a note........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Note edit" time="34.869">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user edits the note.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="User delete the note" time="21.894">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user deletes the note...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Upload documents" time="24.551">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user uploads a document.................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job In Detail View Actions" name="Delete document" time="24.334">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to engagement tab.......................................passed
+And user deletes the document...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Job Edit" name="Navigate to job and edit two fields" time="21.042">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to first job............................................passed
+And user clicks edit button on job..........................................passed
+And user edits two fields of job............................................passed
+And user scrolls and saves job changes......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Candidate Creation" name="add a new candidate" time="57.915">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User adds a new candidate..............................................passed
+Then New candidate should be created successfully...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Create a Task" time="18.472">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+When user create a task for can.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Edit a Task" time="25.439">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user edits the task for can.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Delete the task" time="17.236">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user deletes the task for can...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Add a new note" time="15.771">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user adds a note for can................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Edit the existing note" time="23.155">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user edits the note for can.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Delete the note" time="10.197">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user deletes the note for can...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Upload a new document" time="12.115">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user uploads a document for can.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="12.359">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user deletes the document for can.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Candidate Edit" name="Navigate to candidate and edit two fields" time="16.505">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to first candidate......................................passed
+And user clicks edit button on candidate....................................passed
+And user edits two fields of candidate......................................passed
+And user scrolls and saves candidate changes................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Candidate Submission Flow" name="Submit a candidate to a job from the three-dot menu" time="26.652">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to submit candidate from job three dots.................passed
+And user selects a candidate and clicks next................................passed
+And user fills the candidate submission form................................passed
+Then user completes the final submission....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Candidate Submission Flow" name="Edit Submission Metadata" time="24.729">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to submissionPage.......................................passed
+And user edits the submission metadata expected ctc.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Navigate to submission page" time="13.655">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates to submissionPage.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Create a Task" time="32.657">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+When user create a task in submission.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Edit a Task in submission" time="36.31">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user edits the task in submission.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Delete the task in submission" time="28.792">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user deletes the task in submission.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Add a new note" time="27.302">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user adds a note in submission..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Edit the existing note" time="32.795">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user edits the note in submission.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Delete the note" time="26.441">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user deletes the note in the submission.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Upload a new document" time="25.696">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user uploads a document in submission...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Delete the uploaded document" time="26.44">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And user navigates to submission engagement tab.............................passed
+And user deletes the document in submission.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Submission page" name="Interview creation" time="26.271">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+When user navigates to job detail view......................................passed
+When user navigates submission page.........................................passed
+And User creates a interview................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Interview Pipeline Management" name="Initialize candidate interview pipeline successfully" time="38.953">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(., 'Initialize Pipeline') or contains(text(), 'Initialize')] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-110-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43313}, goog:processID: 921, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43313/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1884d4cdc65d31f089bc14b915a13374">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40549}, goog:processID: 12074, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40549/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c22b9b5e0abe99bed9bfee99bf59fe2a">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(., 'Initialize Pipeline') or contains(text(), 'Initialize')] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-110-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43313}, goog:processID: 921, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43313/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1884d4cdc65d31f089bc14b915a13374
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40549}, goog:processID: 12074, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40549/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c22b9b5e0abe99bed9bfee99bf59fe2a
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.clickInitializePipeline(JobInDetailViewPage.java:156)
@@ -31,7 +486,7 @@ And User clicks on Initialize Pipeline button...............................fail
 Then User should see success toast message "Pipeline Initialized"...........skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Mark candidate as passed successfully" time="18.931">
+<testcase classname="Interview Pipeline Management" name="Mark candidate as passed successfully" time="19.379">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -42,7 +497,7 @@ And User expands an initialized candidate row...............................pass
 And User clicks on Mark as Passed button and waits..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Revert candidate stage successfully" time="18.838">
+<testcase classname="Interview Pipeline Management" name="Revert candidate stage successfully" time="18.118">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -54,7 +509,7 @@ And User clicks on Revert Stage button......................................pass
 Then User should see success toast message "Stage Reverted".................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Skip candidate stage successfully with feedback" time="20.934">
+<testcase classname="Interview Pipeline Management" name="Skip candidate stage successfully with feedback" time="20.968">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -64,6 +519,105 @@ When User navigates to the first job in Jobs list...........................pass
 And User expands an initialized candidate row...............................passed
 And User clicks on Skip Stage button........................................passed
 And User clicks Add Feedback Now, enters feedback "Candidate is ready to skip this stage", and saves.passed
+]]></system-out>
+</testcase>
+<testcase classname="Role Based Access Control" name="Create Permission Groups successfully" time="21.694">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to Permission Groups in Settings........................passed
+And User clicks on New Group button.........................................passed
+And User enters permission group details from properties....................passed
+And User selects two checkboxes from properties.............................passed
+And User scrolls down and saves the permission group........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Role Based Access Control" name="Edit Permission Groups successfully" time="16.821">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to Permission Groups in Settings........................passed
+And User clicks edit for the created permission group.......................passed
+And User changes the permission group name from properties..................passed
+And User saves the edited permission group..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Role Based Access Control" name="Delete Permission Groups successfully" time="11.993">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to Permission Groups in Settings........................passed
+And User deletes the created permission group...............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Roles Management" name="Create Role successfully" time="19.131">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to Roles in Settings....................................passed
+And User clicks on Create Role button.......................................passed
+And User enters role details from properties................................passed
+And User selects permission group from properties...........................passed
+And User saves the role.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Roles Management" name="Delete Role successfully" time="12.103">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to Roles in Settings....................................passed
+And user deletes a role.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Assignment Management" name="Invite User successfully" time="17.35">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to User Assignment in Settings..........................passed
+And User clicks on Invite User button.......................................passed
+And User enters user invitation details.....................................passed
+And User sends the invitation...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Assignment Management" name="Edit User Profile successfully" time="15.686">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to User Assignment in Settings..........................passed
+And User clicks actions for the first user..................................passed
+And User clicks on Edit Profile option......................................passed
+And User enters updated profile details.....................................passed
+And User saves the profile changes..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Assignment Management" name="Delete User Account successfully" time="29.003">
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When User navigates to User Assignment in Settings..........................passed
+And User clicks on Invite User button.......................................passed
+And User enters user invitation details.....................................passed
+And User sends the invitation...............................................passed
+And User searches for the invited user......................................passed
+And User clicks actions for the first user..................................passed
+And User clicks on Delete Account option....................................passed
+And User confirms delete user action........................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
