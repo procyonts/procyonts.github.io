@@ -77,3 +77,10 @@ Feature: Submission page
 
 
 
+  @interview
+  Scenario: Interview creation
+    When user navigates to job detail view
+    When user navigates submission page
+    And User creates a interview
+
+
