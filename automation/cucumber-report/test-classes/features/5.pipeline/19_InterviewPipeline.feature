@@ -39,3 +39,12 @@ Feature: Interview Pipeline Management
     And User expands an initialized candidate row
     And User clicks on Skip Stage button
     And User clicks Add Feedback Now, enters feedback "Candidate is ready to skip this stage", and saves
+
+  @interview
+  Scenario: Interview creation
+    Given User is on login page
+    When User enters username and password from config file
+    And User clicks on login button
+    When user navigates to job detail view
+    When user navigates submission page
+    And User creates a interview
