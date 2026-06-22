@@ -28,10 +28,10 @@ Feature: User Assignment Management
     And User clicks on login button
     Then User should land on dashboard
     When User navigates to User Assignment in Settings
-#    And User clicks on Invite User button
-#    And User enters user invitation details
-#    And User sends the invitation
-#    And User searches for the invited user
+    And User clicks on Invite User button
+    And User enters user invitation details
+    And User sends the invitation
+    And User searches for the invited user
     And User clicks actions for the first user
     And User clicks on Delete Account option
     And User confirms delete user action
