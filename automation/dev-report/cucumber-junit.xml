@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="1,371.776" tests="56" skipped="0" failures="3" errors="0">
-<testcase classname="User Registration" name="Successfully register a new user" time="23.497">
+<testsuite name="Cucumber" time="1,406.603" tests="56" skipped="0" failures="8" errors="0">
+<testcase classname="User Registration" name="Successfully register a new user" time="18.046">
 <system-out><![CDATA[
 Given User is on the signup page............................................passed
 When User fills the registration form with details from signup properties...passed
@@ -8,41 +8,22 @@ And User accepts the terms and clicks Create Account........................pass
 Then User should see a success message or be redirected to the dashboard....passed
 ]]></system-out>
 </testcase>
-<testcase classname="Password Recovery" name="Successfully request a password reset link" time="14.505">
+<testcase classname="Password Recovery" name="Successfully request a password reset link" time="10.035">
 <system-out><![CDATA[
 Given User is on the forgot password page...................................passed
 When User enters email from "signup" properties and clicks Send Reset Link..passed
 Then User should see a confirmation for the reset link......................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login Feature" name="Valid user logs in successfully" time="10.877">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/div[2]/div/div/div/div/div[2]/form/div[1]/div[1]/div/input (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41515}, goog:processID: 1816, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41515/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f9b307a7b96b13e67c0f00e3217d8ca8">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/div[2]/div/div/div/div/div[2]/form/div[1]/div[1]/div/input (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41515}, goog:processID: 1816, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41515/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f9b307a7b96b13e67c0f00e3217d8ca8
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.auth.LoginPage.waitForLoginPageToLoad(LoginPage.java:46)
-	at com.xats.automation.tests.stepdefinitions.auth.AuthSteps.user_is_on_login_page(AuthSteps.java:33)
-	at ✽.User is on login page(file:///runner/_work/automation/automation/src/test/resources/features/1.auth/03_Login.feature:5)
-]]>
-</failure>
+<testcase classname="Login Feature" name="Valid user logs in successfully" time="3.678">
 <system-out><![CDATA[
-Given User is on login page.................................................failed
-When User enters username and password from config file.....................skipped
-And User clicks on login button.............................................skipped
-Then User should land on dashboard..........................................skipped
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="66.409">
+<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="65.699">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -51,7 +32,7 @@ Then User should land on dashboard..........................................pass
 And User navigates to client creation page and adds new client..............passed
 ]]></system-out>
 </testcase>
-<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="26.519">
+<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="26.911">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -61,7 +42,7 @@ When User navigates to client section and adds a new contact................pass
 Then New contact should be created successfully.............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Add a new note" time="16.265">
+<testcase classname="clientInDetailView" name="Add a new note" time="17.212">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -72,7 +53,7 @@ When user navigates to engagement for client................................pass
 And user adds a note for client.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Edit the existing note" time="17.69">
+<testcase classname="clientInDetailView" name="Edit the existing note" time="20.52">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -83,7 +64,7 @@ When user navigates to engagement for client................................pass
 And user edits the note for client..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Delete the note" time="15.683">
+<testcase classname="clientInDetailView" name="Delete the note" time="15.122">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -94,7 +75,7 @@ When user navigates to engagement for client................................pass
 And user deletes the note for client........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Upload a new document" time="18.812">
+<testcase classname="clientInDetailView" name="Upload a new document" time="28.87">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -105,7 +86,7 @@ When user navigates to engagement for client................................pass
 And user uploads a document for client......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Delete the uploaded document" time="15.53">
+<testcase classname="clientInDetailView" name="Delete the uploaded document" time="17.432">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -116,7 +97,7 @@ When user navigates to engagement for client................................pass
 And user deletes the document for client....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Edit" name="Navigate to client and edit two fields" time="16.192">
+<testcase classname="Client Edit" name="Navigate to client and edit two fields" time="16.21">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -128,7 +109,7 @@ And user edits two fields of client.........................................pass
 And user scrolls and saves client changes...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Creation" name="Create a new Job" time="75.876">
+<testcase classname="Job Creation" name="Create a new Job" time="75.037">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -137,7 +118,7 @@ Then User should land on dashboard..........................................pass
 When User navigates to job section and adds a new job.......................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="11.642">
+<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="11.302">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -145,7 +126,7 @@ And User clicks on login button.............................................pass
 When user navigates to job detail view......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Create a task in Task Manager" time="33.277">
+<testcase classname="Job In Detail View Actions" name="Create a task in Task Manager" time="33.402">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -155,7 +136,7 @@ When user navigates to engagement tab.......................................pass
 And user create a task......................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Edit a task in Task Manager" time="36.996">
+<testcase classname="Job In Detail View Actions" name="Edit a task in Task Manager" time="36.33">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -165,7 +146,7 @@ When user navigates to engagement tab.......................................pass
 And user edits the task.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Delete a task in Task Manager" time="31.294">
+<testcase classname="Job In Detail View Actions" name="Delete a task in Task Manager" time="28.392">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -175,7 +156,7 @@ When user navigates to engagement tab.......................................pass
 And user deletes the task...................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Create notes" time="27.465">
+<testcase classname="Job In Detail View Actions" name="Create notes" time="40.449">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -185,17 +166,37 @@ When user navigates to engagement tab.......................................pass
 And user adds a note........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Note edit" time="34.694">
+<testcase classname="Job In Detail View Actions" name="Note edit" time="41.784">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39137}, goog:processID: 5556, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39137/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4a9d17715cfcc95d4413aa6e686f061c">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39137}, goog:processID: 5556, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39137/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4a9d17715cfcc95d4413aa6e686f061c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.job.JobInDetailViewPage.click(JobInDetailViewPage.java:99)
+	at com.xats.automation.tests.pages.job.JobInDetailViewPage.clickJobId(JobInDetailViewPage.java:106)
+	at com.xats.automation.tests.stepdefinitions.job.JobSteps.user_navigates_to_job_detail_view(JobSteps.java:54)
+	at ✽.user navigates to job detail view(file:///runner/_work/automation/automation/src/test/resources/features/3.job/09_JobEngagement.feature:45)
+]]>
+</failure>
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
 And User clicks on login button.............................................passed
-When user navigates to job detail view......................................passed
-When user navigates to engagement tab.......................................passed
-And user edits the note.....................................................passed
+When user navigates to job detail view......................................failed
+When user navigates to engagement tab.......................................skipped
+And user edits the note.....................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="User delete the note" time="22.256">
+<testcase classname="Job In Detail View Actions" name="User delete the note" time="22.814">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -205,7 +206,7 @@ When user navigates to engagement tab.......................................pass
 And user deletes the note...................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Upload documents" time="25.17">
+<testcase classname="Job In Detail View Actions" name="Upload documents" time="26.121">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -215,7 +216,7 @@ When user navigates to engagement tab.......................................pass
 And user uploads a document.................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Delete document" time="24.961">
+<testcase classname="Job In Detail View Actions" name="Delete document" time="24.626">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -225,7 +226,7 @@ When user navigates to engagement tab.......................................pass
 And user deletes the document...............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Edit" name="Navigate to job and edit two fields" time="21.8">
+<testcase classname="Job Edit" name="Navigate to job and edit two fields" time="22.7">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -237,7 +238,7 @@ And user edits two fields of job............................................pass
 And user scrolls and saves job changes......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Creation" name="add a new candidate" time="58.554">
+<testcase classname="Candidate Creation" name="add a new candidate" time="58.274">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -246,7 +247,7 @@ Then User adds a new candidate..............................................pass
 Then New candidate should be created successfully...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Create a Task" time="19.545">
+<testcase classname="candidateInDetailView" name="Create a Task" time="21.351">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -257,7 +258,7 @@ When user navigates to engagement...........................................pass
 When user create a task for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Edit a Task" time="26.502">
+<testcase classname="candidateInDetailView" name="Edit a Task" time="28.052">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -268,47 +269,115 @@ When user navigates to engagement...........................................pass
 And user edits the task for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the task" time="20.15">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-When user navigates to engagement...........................................passed
-And user deletes the task for can...........................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Add a new note" time="33.998">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
-When user navigates to engagement...........................................passed
-And user adds a note for can................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Edit the existing note" time="25.46">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[1]/div/div[2]/div/a[4] (tried for 10 second(s) with 500 milliseconds interval)
+<testcase classname="candidateInDetailView" name="Delete the task" time="27.144">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39491}, goog:processID: 8206, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39491/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a10e1ddf329c1caf5368899b076cfe92">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[1]/div/div[2]/div/a[4] (tried for 10 second(s) with 500 milliseconds interval)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35635}, goog:processID: 7662, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35635/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 57da5864f35a10da1a994a813bd09bf2">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39491}, goog:processID: 8206, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39491/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a10e1ddf329c1caf5368899b076cfe92
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35635}, goog:processID: 7662, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35635/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 57da5864f35a10da1a994a813bd09bf2
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.click(CandidateInDetailViewPage.java:314)
-	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.engagement(CandidateInDetailViewPage.java:73)
-	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_navigates_to_engagement(CandidateSteps.java:62)
-	at ✽.user navigates to engagement(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:36)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.candidateTab(CandidateInDetailViewPage.java:70)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_navigates_to_candidateInDetailView(CandidateSteps.java:57)
+	at ✽.user navigates to candidateInDetailView(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:9)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................passed
+When user navigates to candidateInDetailView................................failed
+When user navigates to engagement...........................................skipped
+And user deletes the task for can...........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Add a new note" time="16.925">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(text(), 'Signed in successfully')] | //li[contains(text(), 'Signed in successfully')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41493}, goog:processID: 7865, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41493/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71890bdc8a371a5890f9fbc6965e0b6b">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(text(), 'Signed in successfully')] | //li[contains(text(), 'Signed in successfully')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41493}, goog:processID: 7865, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41493/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71890bdc8a371a5890f9fbc6965e0b6b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.auth.LoginPage.getToastMessage(LoginPage.java:52)
+	at com.xats.automation.tests.stepdefinitions.auth.AuthSteps.user_should_land_on_dashboard(AuthSteps.java:49)
+	at ✽.User should land on dashboard(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:8)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................passed
+When User enters username and password from config file.....................passed
+And User clicks on login button.............................................passed
+Then User should land on dashboard..........................................failed
+When user navigates to candidateInDetailView................................skipped
+When user navigates to engagement...........................................skipped
+And user adds a note for can................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Edit the existing note" time="10.791">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/div[2]/div/div/div/div/div[2]/form/div[1]/div[1]/div/input (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46509}, goog:processID: 8115, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46509/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 202f69013e3fd95dffaae9b757181aaf">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/div[2]/div/div/div/div/div[2]/form/div[1]/div[1]/div/input (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46509}, goog:processID: 8115, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46509/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 202f69013e3fd95dffaae9b757181aaf
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.auth.LoginPage.waitForLoginPageToLoad(LoginPage.java:46)
+	at com.xats.automation.tests.stepdefinitions.auth.AuthSteps.user_is_on_login_page(AuthSteps.java:33)
+	at ✽.User is on login page(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:5)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on login page.................................................failed
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When user navigates to candidateInDetailView................................skipped
+When user navigates to engagement...........................................skipped
+And user edits the note for can.............................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="candidateInDetailView" name="Delete the note" time="23.943">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div/div[2]/div/div[2]/div/div/div/div/div/div[4]/div/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33497}, goog:processID: 8297, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33497/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cd64cac2c00e1d8ed243af46da7deb9">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div/div[2]/div/div[2]/div/div/div/div/div/div[4]/div/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33497}, goog:processID: 8297, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33497/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cd64cac2c00e1d8ed243af46da7deb9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canDeleteNotes(CandidateInDetailViewPage.java:158)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_deletes_the_note(CandidateSteps.java:86)
+	at ✽.user deletes the note for can(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:42)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -317,22 +386,11 @@ When User enters username and password from config file.....................pass
 And User clicks on login button.............................................passed
 Then User should land on dashboard..........................................passed
 When user navigates to candidateInDetailView................................passed
-When user navigates to engagement...........................................failed
-And user edits the note for can.............................................skipped
-]]></system-out>
-</testcase>
-<testcase classname="candidateInDetailView" name="Delete the note" time="11.581">
-<system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................passed
 When user navigates to engagement...........................................passed
-And user deletes the note for can...........................................passed
+And user deletes the note for can...........................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Upload a new document" time="12.426">
+<testcase classname="candidateInDetailView" name="Upload a new document" time="14.598">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -343,7 +401,7 @@ When user navigates to engagement...........................................pass
 And user uploads a document for can.........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="14.249">
+<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="12.689">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -354,7 +412,7 @@ When user navigates to engagement...........................................pass
 And user deletes the document for can.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Edit" name="Navigate to candidate and edit two fields" time="17.056">
+<testcase classname="Candidate Edit" name="Navigate to candidate and edit two fields" time="16.649">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -366,7 +424,7 @@ And user edits two fields of candidate......................................pass
 And user scrolls and saves candidate changes................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Submission Flow" name="Submit a candidate to a job from the three-dot menu" time="26.562">
+<testcase classname="Candidate Submission Flow" name="Submit a candidate to a job from the three-dot menu" time="28.224">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -377,7 +435,7 @@ And user fills the candidate submission form................................pass
 Then user completes the final submission....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Submission Flow" name="Edit Submission Metadata" time="24.867">
+<testcase classname="Candidate Submission Flow" name="Edit Submission Metadata" time="25.218">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -387,7 +445,7 @@ When user navigates to submissionPage.......................................pass
 And user edits the submission metadata expected ctc.........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Navigate to submission page" time="13.868">
+<testcase classname="Submission page" name="Navigate to submission page" time="13.969">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -396,7 +454,7 @@ When user navigates to job detail view......................................pass
 When user navigates to submissionPage.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Create a Task" time="31.649">
+<testcase classname="Submission page" name="Create a Task" time="32.053">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -407,7 +465,7 @@ And user navigates to submission engagement tab.............................pass
 When user create a task in submission.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Edit a Task in submission" time="36.846">
+<testcase classname="Submission page" name="Edit a Task in submission" time="36.924">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -418,7 +476,7 @@ And user navigates to submission engagement tab.............................pass
 And user edits the task in submission.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the task in submission" time="29.213">
+<testcase classname="Submission page" name="Delete the task in submission" time="29.178">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -429,7 +487,7 @@ And user navigates to submission engagement tab.............................pass
 And user deletes the task in submission.....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Add a new note" time="27.76">
+<testcase classname="Submission page" name="Add a new note" time="27.593">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -440,7 +498,7 @@ And user navigates to submission engagement tab.............................pass
 And user adds a note in submission..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Edit the existing note" time="33.322">
+<testcase classname="Submission page" name="Edit the existing note" time="32.739">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -451,7 +509,7 @@ And user navigates to submission engagement tab.............................pass
 And user edits the note in submission.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the note" time="26.655">
+<testcase classname="Submission page" name="Delete the note" time="26.66">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -462,7 +520,7 @@ And user navigates to submission engagement tab.............................pass
 And user deletes the note in the submission.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Upload a new document" time="25.42">
+<testcase classname="Submission page" name="Upload a new document" time="25.336">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -473,7 +531,7 @@ And user navigates to submission engagement tab.............................pass
 And user uploads a document in submission...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the uploaded document" time="26.785">
+<testcase classname="Submission page" name="Delete the uploaded document" time="26.763">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -484,7 +542,7 @@ And user navigates to submission engagement tab.............................pass
 And user deletes the document in submission.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Initialize candidate interview pipeline successfully" time="17.233">
+<testcase classname="Interview Pipeline Management" name="Initialize candidate interview pipeline successfully" time="17.837">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -496,7 +554,7 @@ And User clicks on Initialize Pipeline button...............................pass
 Then User should see success toast message "Pipeline Initialized"...........passed
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Mark candidate as passed successfully" time="19.191">
+<testcase classname="Interview Pipeline Management" name="Mark candidate as passed successfully" time="31.74">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -507,31 +565,70 @@ And User expands an initialized candidate row...............................pass
 And User clicks on Mark as Passed button and waits..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Revert candidate stage successfully" time="18.302">
+<testcase classname="Interview Pipeline Management" name="Revert candidate stage successfully" time="39.491">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41395}, goog:processID: 12571, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41395/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f1037ba4b2e11da385bdcd525a54b02b">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41395}, goog:processID: 12571, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41395/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f1037ba4b2e11da385bdcd525a54b02b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.job.JobInDetailViewPage.click(JobInDetailViewPage.java:99)
+	at com.xats.automation.tests.pages.job.JobInDetailViewPage.clickJobId(JobInDetailViewPage.java:106)
+	at com.xats.automation.tests.stepdefinitions.job.InterviewPipelineSteps.user_navigates_to_the_first_job_in_jobs_list(InterviewPipelineSteps.java:15)
+	at ✽.User navigates to the first job in Jobs list(file:///runner/_work/automation/automation/src/test/resources/features/5.pipeline/19_InterviewPipeline.feature:28)
+]]>
+</failure>
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
 And User clicks on login button.............................................passed
 Then User should land on dashboard..........................................passed
-When User navigates to the first job in Jobs list...........................passed
-And User expands an initialized candidate row...............................passed
-And User clicks on Revert Stage button......................................passed
-Then User should see success toast message "Stage Reverted".................passed
+When User navigates to the first job in Jobs list...........................failed
+And User expands an initialized candidate row...............................skipped
+And User clicks on Revert Stage button......................................skipped
+Then User should see success toast message "Stage Reverted".................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Skip candidate stage successfully with feedback" time="21.056">
+<testcase classname="Interview Pipeline Management" name="Skip candidate stage successfully with feedback" time="10.824">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/div[2]/div/div/div/div/div[2]/form/div[1]/div[1]/div/input (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46735}, goog:processID: 12829, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46735/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 13d4a1eaee97df9a0283e434324dc933">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/div[2]/div/div/div/div/div[2]/form/div[1]/div[1]/div/input (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46735}, goog:processID: 12829, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46735/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 13d4a1eaee97df9a0283e434324dc933
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.auth.LoginPage.waitForLoginPageToLoad(LoginPage.java:46)
+	at com.xats.automation.tests.stepdefinitions.auth.AuthSteps.user_is_on_login_page(AuthSteps.java:33)
+	at ✽.User is on login page(file:///runner/_work/automation/automation/src/test/resources/features/5.pipeline/19_InterviewPipeline.feature:34)
+]]>
+</failure>
 <system-out><![CDATA[
-Given User is on login page.................................................passed
-When User enters username and password from config file.....................passed
-And User clicks on login button.............................................passed
-Then User should land on dashboard..........................................passed
-When User navigates to the first job in Jobs list...........................passed
-And User expands an initialized candidate row...............................passed
-And User clicks on Skip Stage button........................................passed
-And User clicks Add Feedback Now, enters feedback "Candidate is ready to skip this stage", and saves.passed
+Given User is on login page.................................................failed
+When User enters username and password from config file.....................skipped
+And User clicks on login button.............................................skipped
+Then User should land on dashboard..........................................skipped
+When User navigates to the first job in Jobs list...........................skipped
+And User expands an initialized candidate row...............................skipped
+And User clicks on Skip Stage button........................................skipped
+And User clicks Add Feedback Now, enters feedback "Candidate is ready to skip this stage", and saves.skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Interview creation" time="21.72">
+<testcase classname="Interview Pipeline Management" name="Interview creation" time="23.567">
 <failure type="java.lang.AssertionError" message="❌ Unexpected toast message: Error
 Failed to schedule meeting">
 <![CDATA[java.lang.AssertionError: ❌ Unexpected toast message: Error
@@ -551,7 +648,7 @@ When user navigates submission page.........................................pass
 And User creates a interview................................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Role Based Access Control" name="Create Permission Groups successfully" time="21.919">
+<testcase classname="Role Based Access Control" name="Create Permission Groups successfully" time="21.595">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -564,7 +661,7 @@ And User selects two checkboxes from properties.............................pass
 And User scrolls down and saves the permission group........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Role Based Access Control" name="Edit Permission Groups successfully" time="16.725">
+<testcase classname="Role Based Access Control" name="Edit Permission Groups successfully" time="17.166">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -576,7 +673,7 @@ And User changes the permission group name from properties..................pass
 And User saves the edited permission group..................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Role Based Access Control" name="Delete Permission Groups successfully" time="12.2">
+<testcase classname="Role Based Access Control" name="Delete Permission Groups successfully" time="12.215">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -586,7 +683,7 @@ When User navigates to Permission Groups in Settings........................pass
 And User deletes the created permission group...............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Roles Management" name="Create Role successfully" time="19.169">
+<testcase classname="Roles Management" name="Create Role successfully" time="19.363">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -599,7 +696,7 @@ And User selects permission group from properties...........................pass
 And User saves the role.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Roles Management" name="Delete Role successfully" time="12.182">
+<testcase classname="Roles Management" name="Delete Role successfully" time="12.373">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -609,7 +706,7 @@ When User navigates to Roles in Settings....................................pass
 And user deletes a role.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Assignment Management" name="Invite User successfully" time="17.448">
+<testcase classname="User Assignment Management" name="Invite User successfully" time="17.699">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -621,7 +718,7 @@ And User enters user invitation details.....................................pass
 And User sends the invitation...............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Assignment Management" name="Edit User Profile successfully" time="15.885">
+<testcase classname="User Assignment Management" name="Edit User Profile successfully" time="16.109">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -634,7 +731,7 @@ And User enters updated profile details.....................................pass
 And User saves the profile changes..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Assignment Management" name="Delete User Account successfully" time="28.429">
+<testcase classname="User Assignment Management" name="Delete User Account successfully" time="28.454">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
