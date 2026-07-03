@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="2,282.01" tests="77" skipped="0" failures="29" errors="0">
-<testcase classname="User Registration" name="Successfully register a new user" time="14.132">
+<testsuite name="Cucumber" time="2,260.572" tests="77" skipped="0" failures="29" errors="0">
+<testcase classname="User Registration" name="Successfully register a new user" time="13.348">
 <system-out><![CDATA[
 Given User is on the signup page............................................passed
 When User fills the registration form with details from signup properties...passed
@@ -8,14 +8,14 @@ And User accepts the terms and clicks Create Account........................pass
 Then User should see a success message or be redirected to the dashboard....passed
 ]]></system-out>
 </testcase>
-<testcase classname="Password Recovery" name="Successfully request a password reset link" time="9.881">
+<testcase classname="Password Recovery" name="Successfully request a password reset link" time="9.829">
 <system-out><![CDATA[
 Given User is on the forgot password page...................................passed
 When User enters email from "signup" properties and clicks Send Reset Link..passed
 Then User should see a confirmation for the reset link......................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login Feature" name="Valid user logs in successfully" time="2.816">
+<testcase classname="Login Feature" name="Valid user logs in successfully" time="2.873">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -23,28 +23,39 @@ And User clicks on login button.............................................pass
 Then User should land on dashboard..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="66.14">
+<testcase classname="Client Creation" name="Valid user logs in and creates a new client" time="63.298">
+<failure type="java.lang.AssertionError" message="❌ Unexpected toast message: Onboarding Failed
+Failed to create client: Client with the same name already exists under this tenant.">
+<![CDATA[java.lang.AssertionError: ❌ Unexpected toast message: Onboarding Failed
+Failed to create client: Client with the same name already exists under this tenant.
+	at com.xats.automation.tests.pages.client.ClientPage.validateSuccessToast(ClientPage.java:523)
+	at com.xats.automation.tests.pages.client.ClientPage.clickSubmit(ClientPage.java:332)
+	at com.xats.automation.tests.pages.client.ClientPage.fillFullClientForm(ClientPage.java:243)
+	at com.xats.automation.tests.stepdefinitions.client.ClientSteps.user_navigates_to_client_creation_page_and_adds_new_client(ClientSteps.java:23)
+	at ✽.User navigates to client creation page and adds new client(file:///runner/_work/automation/automation/src/test/resources/features/2.client/04_ClientCreation.feature:10)
+]]>
+</failure>
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
 And User clicks on login button.............................................passed
 Then User should land on dashboard..........................................passed
-And User navigates to client creation page and adds new client..............passed
+And User navigates to client creation page and adds new client..............failed
 ]]></system-out>
 </testcase>
-<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="18.604">
+<testcase classname="Contact Creation" name="Create a new contact under an existing client" time="18.54">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(), 'Add contact')] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41831}, goog:processID: 1865, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41831/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a8fb371be7011eedd851e3a120e0a1a9">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34425}, goog:processID: 1958, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34425/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ec8450f98893620f054e9de795b04006">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(), 'Add contact')] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41831}, goog:processID: 1865, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41831/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a8fb371be7011eedd851e3a120e0a1a9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34425}, goog:processID: 1958, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34425/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ec8450f98893620f054e9de795b04006
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.client.ContactPage.clickButton(ContactPage.java:69)
@@ -62,7 +73,7 @@ When User navigates to client section and adds a new contact................fail
 Then New contact should be created successfully.............................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Add a new note" time="17.447">
+<testcase classname="clientInDetailView" name="Add a new note" time="19.051">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -73,7 +84,7 @@ When user navigates to engagement for client................................pass
 And user adds a note for client.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Edit the existing note" time="17.892">
+<testcase classname="clientInDetailView" name="Edit the existing note" time="18.068">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -84,7 +95,7 @@ When user navigates to engagement for client................................pass
 And user edits the note for client..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Delete the note" time="19.563">
+<testcase classname="clientInDetailView" name="Delete the note" time="20.142">
 <failure type="java.lang.RuntimeException" message="❌ Toast message not displayed">
 <![CDATA[java.lang.RuntimeException: ❌ Toast message not displayed
 	at com.xats.automation.tests.pages.client.ClientInDetailPage.validateSuccessToast(ClientInDetailPage.java:253)
@@ -95,8 +106,8 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45353}, goog:processID: 2560, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45353/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 64e1bc4d2108ce6e79bcd2e526547bf4
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36955}, goog:processID: 2615, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36955/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 155f9ebd2909c3fdaaec097bc677b267
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.client.ClientInDetailPage.validateSuccessToast(ClientInDetailPage.java:242)
@@ -183,7 +194,7 @@ When user navigates to engagement for client................................pass
 And user deletes the note for client........................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Upload a new document" time="18.534">
+<testcase classname="clientInDetailView" name="Upload a new document" time="18.864">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -194,7 +205,7 @@ When user navigates to engagement for client................................pass
 And user uploads a document for client......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="clientInDetailView" name="Delete the uploaded document" time="19.102">
+<testcase classname="clientInDetailView" name="Delete the uploaded document" time="19.154">
 <failure type="java.lang.RuntimeException" message="❌ Toast message not displayed">
 <![CDATA[java.lang.RuntimeException: ❌ Toast message not displayed
 	at com.xats.automation.tests.pages.client.ClientInDetailPage.validateSuccessToast(ClientInDetailPage.java:253)
@@ -205,8 +216,8 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43611}, goog:processID: 3084, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43611/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ca674b02aa25af5679039953324f66cc
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35725}, goog:processID: 3033, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35725/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 631f88603d5ccb74c761cd5b4454e672
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.client.ClientInDetailPage.validateSuccessToast(ClientInDetailPage.java:242)
@@ -293,7 +304,7 @@ When user navigates to engagement for client................................pass
 And user deletes the document for client....................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Edit" name="Navigate to client and edit two fields" time="16.433">
+<testcase classname="Client Edit" name="Navigate to client and edit two fields" time="16.592">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -305,7 +316,7 @@ And user edits two fields of client.........................................pass
 And user scrolls and saves client changes...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Bulk Upload" name="Upload a CSV file with 2 clients and verify they are created" time="12.909">
+<testcase classname="Client Bulk Upload" name="Upload a CSV file with 2 clients and verify they are created" time="12.661">
 <failure type="java.lang.AssertionError" message="❌ Expected 2 created, but got: 0. Banner: [Upload complete: 0 created, 2 skipped, 0 failed.]">
 <![CDATA[java.lang.AssertionError: ❌ Expected 2 created, but got: 0. Banner: [Upload complete: 0 created, 2 skipped, 0 failed.]
 	at com.xats.automation.tests.pages.client.ClientBulkUploadPage.waitForUploadAndVerifyCreated(ClientBulkUploadPage.java:158)
@@ -324,7 +335,7 @@ And User clicks the Upload button for bulk clients..........................pass
 Then Upload should complete with 2 clients created..........................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Bulk Upload" name="Navigate to clients and delete multiple clients" time="11.023">
+<testcase classname="Client Bulk Upload" name="Navigate to clients and delete multiple clients" time="11.002">
 <failure type="java.lang.AssertionError" message="❌ Unexpected toast message: Deletion Blocked
 Client has linked contacts. Remove all contacts before deleting.">
 <![CDATA[java.lang.AssertionError: ❌ Unexpected toast message: Deletion Blocked
@@ -346,7 +357,7 @@ And User confirms the deletion of selected clients..........................pass
 Then A toast message confirming client deletion should be displayed.........failed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Search and Filter Functionality" name="Search clients with valid keyword" time="11.437">
+<testcase classname="Client Search and Filter Functionality" name="Search clients with valid keyword" time="12.018">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -357,7 +368,7 @@ And User searches for a client by valid keyword.............................pass
 Then Client search results should be visible................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Search and Filter Functionality" name="Search clients with invalid keyword" time="18.611">
+<testcase classname="Client Search and Filter Functionality" name="Search clients with invalid keyword" time="18.647">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -368,7 +379,7 @@ And User searches for a client by invalid keyword...........................pass
 Then No client results should be displayed..................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Search and Filter Functionality" name="Clear client search to restore list" time="15.244">
+<testcase classname="Client Search and Filter Functionality" name="Clear client search to restore list" time="15.87">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -380,7 +391,7 @@ And User clears the client search...........................................pass
 Then Client search results should be visible................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Client Search and Filter Functionality" name="Filter clients by Status" time="19.622">
+<testcase classname="Client Search and Filter Functionality" name="Filter clients by Status" time="19.574">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -391,7 +402,7 @@ And User filters clients by status..........................................pass
 Then Filtered client results should match the status filter.................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Creation" name="Create a new Job" time="76.331">
+<testcase classname="Job Creation" name="Create a new Job" time="78.974">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -400,7 +411,7 @@ Then User should land on dashboard..........................................pass
 When User navigates to job section and adds a new job.......................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="10.629">
+<testcase classname="Job In Detail View Actions" name="Navigate to job detail view" time="11.109">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -408,7 +419,7 @@ And User clicks on login button.............................................pass
 When user navigates to job detail view......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Create a task in Task Manager" time="32.271">
+<testcase classname="Job In Detail View Actions" name="Create a task in Task Manager" time="32.754">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -418,7 +429,7 @@ When user navigates to engagement tab.......................................pass
 And user create a task......................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Edit a task in Task Manager" time="36.495">
+<testcase classname="Job In Detail View Actions" name="Edit a task in Task Manager" time="37.171">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -428,7 +439,7 @@ When user navigates to engagement tab.......................................pass
 And user edits the task.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Delete a task in Task Manager" time="28.596">
+<testcase classname="Job In Detail View Actions" name="Delete a task in Task Manager" time="28.262">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -438,7 +449,7 @@ When user navigates to engagement tab.......................................pass
 And user deletes the task...................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Create notes" time="26.813">
+<testcase classname="Job In Detail View Actions" name="Create notes" time="26.77">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -448,7 +459,7 @@ When user navigates to engagement tab.......................................pass
 And user adds a note........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Note edit" time="34.378">
+<testcase classname="Job In Detail View Actions" name="Note edit" time="34.573">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -458,7 +469,7 @@ When user navigates to engagement tab.......................................pass
 And user edits the note.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="User delete the note" time="43.99">
+<testcase classname="Job In Detail View Actions" name="User delete the note" time="44.617">
 <failure type="java.lang.RuntimeException" message="❌ Toast message not displayed">
 <![CDATA[java.lang.RuntimeException: ❌ Toast message not displayed
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.validateSuccessToast(JobInDetailViewPage.java:650)
@@ -469,8 +480,8 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43119}, goog:processID: 6925, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43119/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3c0c551ee6cd6a17c6436416a63405d5
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33735}, goog:processID: 6527, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33735/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0519cac5574ae50248d32570a819512a
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.validateSuccessToast(JobInDetailViewPage.java:639)
@@ -556,7 +567,7 @@ When user navigates to engagement tab.......................................pass
 And user deletes the note...................................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Upload documents" time="25.57">
+<testcase classname="Job In Detail View Actions" name="Upload documents" time="25.693">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -566,7 +577,7 @@ When user navigates to engagement tab.......................................pass
 And user uploads a document.................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job In Detail View Actions" name="Delete document" time="44.365">
+<testcase classname="Job In Detail View Actions" name="Delete document" time="44.473">
 <failure type="java.lang.RuntimeException" message="❌ Toast message not displayed">
 <![CDATA[java.lang.RuntimeException: ❌ Toast message not displayed
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.validateSuccessToast(JobInDetailViewPage.java:650)
@@ -577,8 +588,8 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38761}, goog:processID: 7451, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38761/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bcd3618cf431bf9a0b8114fe720f1b98
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42053}, goog:processID: 7052, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42053/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6fdd60f348a973e5edf9d0b23f0734a
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.validateSuccessToast(JobInDetailViewPage.java:639)
@@ -664,7 +675,7 @@ When user navigates to engagement tab.......................................pass
 And user deletes the document...............................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Edit" name="Navigate to job and edit two fields" time="21.724">
+<testcase classname="Job Edit" name="Navigate to job and edit two fields" time="22.874">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -676,7 +687,7 @@ And user edits two fields of job............................................pass
 And user scrolls and saves job changes......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Bulk Upload" name="Upload a CSV file with 2 jobs and verify they are created" time="21.786">
+<testcase classname="Job Bulk Upload" name="Upload a CSV file with 2 jobs and verify they are created" time="21.701">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -688,7 +699,7 @@ And User clicks the Upload button for bulk jobs.............................pass
 Then Upload should complete with 2 jobs created.............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Bulk Upload" name="Navigate to jobs and delete multiple jobs" time="11.995">
+<testcase classname="Job Bulk Upload" name="Navigate to jobs and delete multiple jobs" time="11.946">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -701,7 +712,7 @@ And User confirms the deletion of selected jobs.............................pass
 Then A toast message confirming job deletion should be displayed............passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Search and Filter Functionality" name="Search jobs with valid keyword" time="9.347">
+<testcase classname="Job Search and Filter Functionality" name="Search jobs with valid keyword" time="11.531">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -712,7 +723,7 @@ And User searches for a job by valid keyword................................pass
 Then Job search results should be visible...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Search and Filter Functionality" name="Search jobs with invalid keyword" time="19.624">
+<testcase classname="Job Search and Filter Functionality" name="Search jobs with invalid keyword" time="19.781">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -723,7 +734,7 @@ And User searches for a job by invalid keyword..............................pass
 Then No job results should be displayed.....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Search and Filter Functionality" name="Clear job search to restore list" time="13.951">
+<testcase classname="Job Search and Filter Functionality" name="Clear job search to restore list" time="15.578">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -735,25 +746,25 @@ And User clears the job search..............................................pass
 Then Job search results should be visible...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Job Search and Filter Functionality" name="Filter jobs by Status" time="7.4">
+<testcase classname="Job Search and Filter Functionality" name="Filter jobs by Status" time="7.475">
 <failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;th class=&quot;uppercase tracking-wider [&amp;amp;:has([role=checkbox])]:pr-0 [&amp;amp;&amp;gt;[role=checkbox]]:translate-y-[2px] h-[37px] px-[12px] text-[#202020] text-[12px] font-[600] whitespace-nowrap border-b border-[#F1F5F9] align-middle bg-[#DEE8FF] cursor-default text-center&quot; role=&quot;button&quot; tabindex=&quot;0&quot; aria-disabled=&quot;true&quot; aria-roledescription=&quot;sortable&quot; aria-describedby=&quot;DndDescribedBy-0&quot; style=&quot;opacity: 1; width: 100px;&quot;&gt;...&lt;/th&gt; is not clickable at point (1648, 179). Other element would receive the click: &lt;html lang=&quot;en&quot; class=&quot;h-full&quot; style=&quot;&quot;&gt;...&lt;/html&gt;
   (Session info: chrome=143.0.7499.40)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f817dae9850a035c2bf1a73a2a39920d, clickElement {id=f.1B13B2F6D065F0BC6F0D9F20EF4CE732.d.086663DB372992E02BAC6B98792F95DD.e.30}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43193}, goog:processID: 9087, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43193/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (f817dae9850a035c2bf1a73a2a39920d)] -&gt; xpath: //div[@role='menuitem' or @role='option' or contains(@class, 'select')]//*[normalize-space(text())='Open'] | //*[contains(text(), 'Open') and not(self::button)]]
-Session ID: f817dae9850a035c2bf1a73a2a39920d">
+Command: [9eb203d1fc2b383ee2d85011a7c4829b, clickElement {id=f.9B4A6A536D7D114BC594D1ED9FB7D9C9.d.BB436B8BA1141B0842E731971CA9A5A6.e.31}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40341}, goog:processID: 8690, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40341/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (9eb203d1fc2b383ee2d85011a7c4829b)] -&gt; xpath: //div[@role='menuitem' or @role='option' or contains(@class, 'select')]//*[normalize-space(text())='Open'] | //*[contains(text(), 'Open') and not(self::button)]]
+Session ID: 9eb203d1fc2b383ee2d85011a7c4829b">
 <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <th class="uppercase tracking-wider [&amp;:has([role=checkbox])]:pr-0 [&amp;&gt;[role=checkbox]]:translate-y-[2px] h-[37px] px-[12px] text-[#202020] text-[12px] font-[600] whitespace-nowrap border-b border-[#F1F5F9] align-middle bg-[#DEE8FF] cursor-default text-center" role="button" tabindex="0" aria-disabled="true" aria-roledescription="sortable" aria-describedby="DndDescribedBy-0" style="opacity: 1; width: 100px;">...</th> is not clickable at point (1648, 179). Other element would receive the click: <html lang="en" class="h-full" style="">...</html>
   (Session info: chrome=143.0.7499.40)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f817dae9850a035c2bf1a73a2a39920d, clickElement {id=f.1B13B2F6D065F0BC6F0D9F20EF4CE732.d.086663DB372992E02BAC6B98792F95DD.e.30}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43193}, goog:processID: 9087, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43193/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (f817dae9850a035c2bf1a73a2a39920d)] -> xpath: //div[@role='menuitem' or @role='option' or contains(@class, 'select')]//*[normalize-space(text())='Open'] | //*[contains(text(), 'Open') and not(self::button)]]
-Session ID: f817dae9850a035c2bf1a73a2a39920d
+Command: [9eb203d1fc2b383ee2d85011a7c4829b, clickElement {id=f.9B4A6A536D7D114BC594D1ED9FB7D9C9.d.BB436B8BA1141B0842E731971CA9A5A6.e.31}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40341}, goog:processID: 8690, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40341/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (9eb203d1fc2b383ee2d85011a7c4829b)] -> xpath: //div[@role='menuitem' or @role='option' or contains(@class, 'select')]//*[normalize-space(text())='Open'] | //*[contains(text(), 'Open') and not(self::button)]]
+Session ID: 9eb203d1fc2b383ee2d85011a7c4829b
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -781,7 +792,7 @@ And User filters jobs by status.............................................fail
 Then Filtered job results should match the status filter....................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Job Search and Filter Functionality" name="Filter jobs by Priority" time="20.851">
+<testcase classname="Job Search and Filter Functionality" name="Filter jobs by Priority" time="21.185">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -792,7 +803,7 @@ And User filters jobs by priority...........................................pass
 Then Filtered job results should match the priority filter..................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Creation" name="add a new candidate" time="58.573">
+<testcase classname="Candidate Creation" name="add a new candidate" time="59.249">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -801,7 +812,7 @@ Then User adds a new candidate..............................................pass
 Then New candidate should be created successfully...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Create a Task" time="19.664">
+<testcase classname="candidateInDetailView" name="Create a Task" time="19.149">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -812,7 +823,7 @@ When user navigates to engagement...........................................pass
 When user create a task for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Edit a Task" time="26.714">
+<testcase classname="candidateInDetailView" name="Edit a Task" time="26.945">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -823,7 +834,7 @@ When user navigates to engagement...........................................pass
 And user edits the task for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the task" time="19.9">
+<testcase classname="candidateInDetailView" name="Delete the task" time="19.685">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -834,7 +845,7 @@ When user navigates to engagement...........................................pass
 And user deletes the task for can...........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Add a new note" time="16.698">
+<testcase classname="candidateInDetailView" name="Add a new note" time="17.875">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -845,7 +856,7 @@ When user navigates to engagement...........................................pass
 And user adds a note for can................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Edit the existing note" time="23.929">
+<testcase classname="candidateInDetailView" name="Edit the existing note" time="23.26">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -856,7 +867,7 @@ When user navigates to engagement...........................................pass
 And user edits the note for can.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the note" time="43.969">
+<testcase classname="candidateInDetailView" name="Delete the note" time="19.41">
 <failure type="java.lang.RuntimeException" message="❌ Toast message not displayed">
 <![CDATA[java.lang.RuntimeException: ❌ Toast message not displayed
 	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.validateSuccessToast(CandidateInDetailViewPage.java:436)
@@ -867,8 +878,8 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43309}, goog:processID: 11087, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43309/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 96378fe95fd50d6177eacf6a7a719cca
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39227}, goog:processID: 10653, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39227/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef59b7c31209be68b88e804e5f2c083c
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.validateSuccessToast(CandidateInDetailViewPage.java:400)
@@ -955,55 +966,104 @@ When user navigates to engagement...........................................pass
 And user deletes the note for can...........................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Upload a new document" time="18.051">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(@href, '/candidates')] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36365}, goog:processID: 11349, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36365/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: abb8bcbc9dc4eef8c7c45982ba9aaed3">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(@href, '/candidates')] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36365}, goog:processID: 11349, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36365/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: abb8bcbc9dc4eef8c7c45982ba9aaed3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.click(CandidateInDetailViewPage.java:314)
-	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.candidateTab(CandidateInDetailViewPage.java:68)
-	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_navigates_to_candidateInDetailView(CandidateSteps.java:59)
-	at ✽.user navigates to candidateInDetailView(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:9)
-]]>
-</failure>
+<testcase classname="candidateInDetailView" name="Upload a new document" time="14.783">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
 And User clicks on login button.............................................passed
 Then User should land on dashboard..........................................passed
-When user navigates to candidateInDetailView................................failed
-When user navigates to engagement...........................................skipped
-And user uploads a document for can.........................................skipped
+When user navigates to candidateInDetailView................................passed
+When user navigates to engagement...........................................passed
+And user uploads a document for can.........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="17.236">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div/div[3]/div/div[2]/div/div/div[2]/div[2]/div/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41373}, goog:processID: 11594, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41373/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8c7f98cba7b815a4640a12af87e17dfa">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div/div[3]/div/div[2]/div/div/div[2]/div[2]/div/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41373}, goog:processID: 11594, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41373/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8c7f98cba7b815a4640a12af87e17dfa
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canDeleteDocument(CandidateInDetailViewPage.java:207)
+<testcase classname="candidateInDetailView" name="Delete the uploaded document" time="19.215">
+<failure type="java.lang.RuntimeException" message="❌ Toast message not displayed">
+<![CDATA[java.lang.RuntimeException: ❌ Toast message not displayed
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.validateSuccessToast(CandidateInDetailViewPage.java:436)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canDeleteDocument(CandidateInDetailViewPage.java:218)
 	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_deletes_the_document(CandidateSteps.java:100)
 	at ✽.user deletes the document for can(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:52)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //ol/li | //li | //div[contains(@class, 'toast')] | //div[contains(@class, 'Toastify')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41641}, goog:processID: 11115, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41641/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af4b2bfe49356099c53e5df47ab5a342
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.validateSuccessToast(CandidateInDetailViewPage.java:400)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canDeleteDocument(CandidateInDetailViewPage.java:218)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_deletes_the_document(CandidateSteps.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:148)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:163)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:146)
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.testng.junit.JUnit4TestRunner.start(JUnit4TestRunner.java:78)
+	at org.testng.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:63)
+	at org.testng.TestRunner$1.run(TestRunner.java:710)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.runJUnitWorkers(TestRunner.java:927)
+	at org.testng.TestRunner.privateRunJUnit(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -1016,7 +1076,7 @@ When user navigates to engagement...........................................pass
 And user deletes the document for can.......................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Edit" name="Navigate to candidate and edit two fields" time="18.884">
+<testcase classname="Candidate Edit" name="Navigate to candidate and edit two fields" time="17.555">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1028,19 +1088,19 @@ And user edits two fields of candidate......................................pass
 And user scrolls and saves candidate changes................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Submission Flow" name="Submit a candidate to a job from the three-dot menu" time="20.983">
+<testcase classname="Candidate Submission Flow" name="Submit a candidate to a job from the three-dot menu" time="20.416">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[9]/div/button (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40117}, goog:processID: 12087, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40117/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6c24e4655158ffb5d68e51c49658f816">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39507}, goog:processID: 11633, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39507/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 927c2123fbb44c7a1d0b89eb91a2fe70">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[9]/div/button (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40117}, goog:processID: 12087, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40117/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6c24e4655158ffb5d68e51c49658f816
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39507}, goog:processID: 11633, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39507/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 927c2123fbb44c7a1d0b89eb91a2fe70
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmitCandidatePage.clickButton(SubmitCandidatePage.java:134)
@@ -1059,19 +1119,19 @@ And user fills the candidate submission form................................skip
 Then user completes the final submission....................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Submission Flow" name="Edit Submission Metadata" time="61.537">
+<testcase classname="Candidate Submission Flow" name="Edit Submission Metadata" time="61.401">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34341}, goog:processID: 12337, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34341/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 21b5678f78813b4453b9989529bf1c4c">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38981}, goog:processID: 11895, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38981/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 441f1abf152351a1c3fb97fa683ca247">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34341}, goog:processID: 12337, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34341/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 21b5678f78813b4453b9989529bf1c4c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38981}, goog:processID: 11895, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38981/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 441f1abf152351a1c3fb97fa683ca247
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1089,19 +1149,19 @@ When user navigates to submissionPage.......................................fail
 And user edits the submission metadata expected ctc.........................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Navigate to submission page" time="61.792">
+<testcase classname="Submission page" name="Navigate to submission page" time="61.485">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41613}, goog:processID: 12626, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41613/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 53b13db25ec91b00cc0c4191d57d6755">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36251}, goog:processID: 12161, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36251/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a792f73b8997fa0f9a3d717043dff3de">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41613}, goog:processID: 12626, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41613/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 53b13db25ec91b00cc0c4191d57d6755
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36251}, goog:processID: 12161, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36251/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a792f73b8997fa0f9a3d717043dff3de
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1118,19 +1178,19 @@ When user navigates to job detail view......................................pass
 When user navigates to submissionPage.......................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Create a Task" time="62.131">
+<testcase classname="Submission page" name="Create a Task" time="61.88">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43937}, goog:processID: 12903, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43937/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 982d7c4c0f7fdf8940268296c8bf2031">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35535}, goog:processID: 12424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35535/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e950105deba55346995ae2a653bfc9b">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43937}, goog:processID: 12903, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43937/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 982d7c4c0f7fdf8940268296c8bf2031
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35535}, goog:processID: 12424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35535/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e950105deba55346995ae2a653bfc9b
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1149,19 +1209,19 @@ And user navigates to submission engagement tab.............................skip
 When user create a task in submission.......................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Edit a Task in submission" time="70.246">
+<testcase classname="Submission page" name="Edit a Task in submission" time="61.519">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37609}, goog:processID: 13204, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37609/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ac3a5025bdc060663f47f050b60b9d89">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36163}, goog:processID: 12689, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36163/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fb8de7de11f64c9c72646890e54d9e92">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37609}, goog:processID: 13204, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37609/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ac3a5025bdc060663f47f050b60b9d89
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36163}, goog:processID: 12689, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36163/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fb8de7de11f64c9c72646890e54d9e92
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1180,19 +1240,19 @@ And user navigates to submission engagement tab.............................skip
 And user edits the task in submission.......................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the task in submission" time="62.32">
+<testcase classname="Submission page" name="Delete the task in submission" time="61.465">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45449}, goog:processID: 13614, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45449/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d014c5085453c9c48dd5729e5aedee2c">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39329}, goog:processID: 12956, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39329/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 320e3f37d37edab7c70700effac11da6">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45449}, goog:processID: 13614, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45449/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d014c5085453c9c48dd5729e5aedee2c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39329}, goog:processID: 12956, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39329/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 320e3f37d37edab7c70700effac11da6
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1211,19 +1271,19 @@ And user navigates to submission engagement tab.............................skip
 And user deletes the task in submission.....................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Add a new note" time="61.537">
+<testcase classname="Submission page" name="Add a new note" time="61.996">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36757}, goog:processID: 13922, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36757/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3420e1ddb9c31bc1d11da29c33215f93">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45615}, goog:processID: 13222, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45615/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cd3b032c52188d3efbb7ebea8c0f185a">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36757}, goog:processID: 13922, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36757/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3420e1ddb9c31bc1d11da29c33215f93
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45615}, goog:processID: 13222, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45615/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cd3b032c52188d3efbb7ebea8c0f185a
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1242,19 +1302,19 @@ And user navigates to submission engagement tab.............................skip
 And user adds a note in submission..........................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Edit the existing note" time="61.482">
+<testcase classname="Submission page" name="Edit the existing note" time="61.588">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46541}, goog:processID: 14194, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46541/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c14ee520ed88b45ea34de2529de34f04">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38005}, goog:processID: 13487, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38005/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3e0c28bf8956b767be4d90db2faebd6">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46541}, goog:processID: 14194, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46541/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c14ee520ed88b45ea34de2529de34f04
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38005}, goog:processID: 13487, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38005/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3e0c28bf8956b767be4d90db2faebd6
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1273,19 +1333,19 @@ And user navigates to submission engagement tab.............................skip
 And user edits the note in submission.......................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the note" time="61.602">
+<testcase classname="Submission page" name="Delete the note" time="61.626">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43021}, goog:processID: 14507, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43021/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f14314d13517dfb03b1198c420308492">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35799}, goog:processID: 13755, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35799/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fb5e3465627e964675c680f8bb83c446">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43021}, goog:processID: 14507, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43021/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f14314d13517dfb03b1198c420308492
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35799}, goog:processID: 13755, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35799/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fb5e3465627e964675c680f8bb83c446
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1304,19 +1364,19 @@ And user navigates to submission engagement tab.............................skip
 And user deletes the note in the submission.................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Upload a new document" time="61.923">
+<testcase classname="Submission page" name="Upload a new document" time="61.564">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33575}, goog:processID: 14797, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33575/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 670661a1213022e940e0ae76de9f5558">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39741}, goog:processID: 14027, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39741/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d4cc81311e4b7f7e979bb34afa7df63c">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33575}, goog:processID: 14797, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33575/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 670661a1213022e940e0ae76de9f5558
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39741}, goog:processID: 14027, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39741/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d4cc81311e4b7f7e979bb34afa7df63c
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1335,19 +1395,19 @@ And user navigates to submission engagement tab.............................skip
 And user uploads a document in submission...................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Submission page" name="Delete the uploaded document" time="61.404">
+<testcase classname="Submission page" name="Delete the uploaded document" time="61.503">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44719}, goog:processID: 15092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44719/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 90ddcb4d8921cfb307b2e9626b73b502">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41949}, goog:processID: 14294, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41949/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ddae462f0d14f7e592f1f44f4702b82">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44719}, goog:processID: 15092, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44719/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 90ddcb4d8921cfb307b2e9626b73b502
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41949}, goog:processID: 14294, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41949/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ddae462f0d14f7e592f1f44f4702b82
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1366,7 +1426,7 @@ And user navigates to submission engagement tab.............................skip
 And user deletes the document in submission.................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Search and Filter Functionality" name="Search candidates with valid keyword" time="9.287">
+<testcase classname="Candidate Search and Filter Functionality" name="Search candidates with valid keyword" time="9.739">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1377,7 +1437,7 @@ And User searches for a candidate by valid keyword..........................pass
 Then Candidate search results should be visible.............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Search and Filter Functionality" name="Search candidates with invalid keyword" time="22.127">
+<testcase classname="Candidate Search and Filter Functionality" name="Search candidates with invalid keyword" time="21.563">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1388,7 +1448,7 @@ And User searches for a candidate by invalid keyword........................pass
 Then No candidate results should be displayed...............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Search and Filter Functionality" name="Filter candidates by Status" time="22.851">
+<testcase classname="Candidate Search and Filter Functionality" name="Filter candidates by Status" time="22.756">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1399,7 +1459,7 @@ And User filters candidates by status.......................................pass
 Then Filtered candidate results should match the status filter..............passed
 ]]></system-out>
 </testcase>
-<testcase classname="Candidate Search and Filter Functionality" name="Filter candidates by Experience" time="10.708">
+<testcase classname="Candidate Search and Filter Functionality" name="Filter candidates by Experience" time="10.665">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1410,19 +1470,19 @@ And User filters candidates by experience...................................pass
 Then Filtered candidate results should match the experience filter..........passed
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Initialize candidate interview pipeline successfully" time="37.349">
+<testcase classname="Interview Pipeline Management" name="Initialize candidate interview pipeline successfully" time="37.306">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.cssSelector: body &gt; div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] &gt; div &gt; main &gt; div &gt; div.flex-1.min-h-0.w-full.mt-0 &gt; div &gt; div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden &gt; div &gt; div &gt; div &gt; div.relative.flex-1.flex.flex-col.min-h-0 &gt; div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white &gt; div:nth-child(1) &gt; div &gt; div.w-8.flex.justify-end &gt; div &gt; svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40195}, goog:processID: 16235, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40195/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c36d4458d29f2599eadce36c1d66b830">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39203}, goog:processID: 15470, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39203/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f2cb7bea98f6ab4f298f2373b08d94f">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: body > div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] > div > main > div > div.flex-1.min-h-0.w-full.mt-0 > div > div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden > div > div > div > div.relative.flex-1.flex.flex-col.min-h-0 > div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white > div:nth-child(1) > div > div.w-8.flex.justify-end > div > svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40195}, goog:processID: 16235, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40195/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c36d4458d29f2599eadce36c1d66b830
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39203}, goog:processID: 15470, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39203/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f2cb7bea98f6ab4f298f2373b08d94f
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.expandSubmittedCandidate(JobInDetailViewPage.java:130)
@@ -1441,19 +1501,19 @@ And User clicks on Initialize Pipeline button...............................skip
 Then User should see success toast message "Pipeline Initialized"...........skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Mark candidate as passed successfully" time="37.421">
+<testcase classname="Interview Pipeline Management" name="Mark candidate as passed successfully" time="37.441">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.cssSelector: body &gt; div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] &gt; div &gt; main &gt; div &gt; div.flex-1.min-h-0.w-full.mt-0 &gt; div &gt; div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden &gt; div &gt; div &gt; div &gt; div.relative.flex-1.flex.flex-col.min-h-0 &gt; div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white &gt; div:nth-child(1) &gt; div &gt; div.w-8.flex.justify-end &gt; div &gt; svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42085}, goog:processID: 16496, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42085/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4392c9dc3553f700ced0dfd260f74a2b">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44965}, goog:processID: 15733, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44965/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 31a36121d388c8b5d99a94191c7adc6c">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: body > div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] > div > main > div > div.flex-1.min-h-0.w-full.mt-0 > div > div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden > div > div > div > div.relative.flex-1.flex.flex-col.min-h-0 > div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white > div:nth-child(1) > div > div.w-8.flex.justify-end > div > svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42085}, goog:processID: 16496, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42085/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4392c9dc3553f700ced0dfd260f74a2b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44965}, goog:processID: 15733, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44965/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 31a36121d388c8b5d99a94191c7adc6c
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.expandInitializedCandidate(JobInDetailViewPage.java:144)
@@ -1471,19 +1531,19 @@ And User expands an initialized candidate row...............................fail
 And User clicks on Mark as Passed button and waits..........................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Revert candidate stage successfully" time="37.866">
+<testcase classname="Interview Pipeline Management" name="Revert candidate stage successfully" time="37.408">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.cssSelector: body &gt; div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] &gt; div &gt; main &gt; div &gt; div.flex-1.min-h-0.w-full.mt-0 &gt; div &gt; div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden &gt; div &gt; div &gt; div &gt; div.relative.flex-1.flex.flex-col.min-h-0 &gt; div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white &gt; div:nth-child(1) &gt; div &gt; div.w-8.flex.justify-end &gt; div &gt; svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34035}, goog:processID: 16760, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34035/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 17fffe07af25190de1dee6ff23983fb4">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33845}, goog:processID: 15997, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33845/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38db36d013d15b275d959c9ccd97aa27">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: body > div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] > div > main > div > div.flex-1.min-h-0.w-full.mt-0 > div > div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden > div > div > div > div.relative.flex-1.flex.flex-col.min-h-0 > div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white > div:nth-child(1) > div > div.w-8.flex.justify-end > div > svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:34035}, goog:processID: 16760, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34035/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 17fffe07af25190de1dee6ff23983fb4
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33845}, goog:processID: 15997, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33845/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38db36d013d15b275d959c9ccd97aa27
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.expandInitializedCandidate(JobInDetailViewPage.java:144)
@@ -1502,19 +1562,19 @@ And User clicks on Revert Stage button......................................skip
 Then User should see success toast message "Stage Reverted".................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Skip candidate stage successfully with feedback" time="37.294">
+<testcase classname="Interview Pipeline Management" name="Skip candidate stage successfully with feedback" time="37.481">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.cssSelector: body &gt; div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] &gt; div &gt; main &gt; div &gt; div.flex-1.min-h-0.w-full.mt-0 &gt; div &gt; div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden &gt; div &gt; div &gt; div &gt; div.relative.flex-1.flex.flex-col.min-h-0 &gt; div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white &gt; div:nth-child(1) &gt; div &gt; div.w-8.flex.justify-end &gt; div &gt; svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36821}, goog:processID: 17024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36821/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95ea69dcf7aaec6fec6e9cbcfa286ade">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40199}, goog:processID: 16269, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40199/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6eb12104ede47541d0f0a569c0e70aca">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: body > div.flex.h-full.min-h-screen.bg-\[\#F1F5F9\] > div > main > div > div.flex-1.min-h-0.w-full.mt-0 > div > div.flex-1.lg\:w-3\/4.flex.flex-col.min-h-0.overflow-hidden > div > div > div > div.relative.flex-1.flex.flex-col.min-h-0 > div.flex-1.min-h-\[100px\].overflow-y-auto.custom-scrollbar.divide-y.divide-gray-100.bg-white > div:nth-child(1) > div > div.w-8.flex.justify-end > div > svg (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36821}, goog:processID: 17024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36821/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95ea69dcf7aaec6fec6e9cbcfa286ade
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40199}, goog:processID: 16269, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40199/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6eb12104ede47541d0f0a569c0e70aca
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.job.JobInDetailViewPage.expandInitializedCandidate(JobInDetailViewPage.java:144)
@@ -1533,19 +1593,19 @@ And User clicks on Skip Stage button........................................skip
 And User clicks Add Feedback Now, enters feedback "Candidate is ready to skip this stage", and saves.skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Interview Pipeline Management" name="Interview creation" time="61.532">
+<testcase classname="Interview Pipeline Management" name="Interview creation" time="61.478">
 <failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35215}, goog:processID: 17293, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35215/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d9d06b2270f26564af81d579502b42eb">
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43585}, goog:processID: 16532, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43585/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6fab666c6543616ef599f431fd280f99">
 <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table//tbody//tr[1]//td//a[not(contains(@class, 'hidden'))] (tried for 25 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '21.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35215}, goog:processID: 17293, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35215/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d9d06b2270f26564af81d579502b42eb
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43585}, goog:processID: 16532, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43585/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6fab666c6543616ef599f431fd280f99
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.xats.automation.tests.pages.candidate.SubmissionEngagementPage.click(SubmissionEngagementPage.java:55)
@@ -1563,7 +1623,7 @@ When user navigates submission page.........................................fail
 And User creates a interview................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Role Based Access Control" name="Create Permission Groups successfully" time="21.842">
+<testcase classname="Role Based Access Control" name="Create Permission Groups successfully" time="22.342">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1576,7 +1636,7 @@ And User selects two checkboxes from properties.............................pass
 And User scrolls down and saves the permission group........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Role Based Access Control" name="Edit Permission Groups successfully" time="17.111">
+<testcase classname="Role Based Access Control" name="Edit Permission Groups successfully" time="17.184">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1588,7 +1648,7 @@ And User changes the permission group name from properties..................pass
 And User saves the edited permission group..................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Role Based Access Control" name="Delete Permission Groups successfully" time="12.424">
+<testcase classname="Role Based Access Control" name="Delete Permission Groups successfully" time="13.077">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1598,7 +1658,7 @@ When User navigates to Permission Groups in Settings........................pass
 And User deletes the created permission group...............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Roles Management" name="Create Role successfully" time="19.114">
+<testcase classname="Roles Management" name="Create Role successfully" time="19.607">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1611,7 +1671,7 @@ And User selects permission group from properties...........................pass
 And User saves the role.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Roles Management" name="Delete Role successfully" time="12.385">
+<testcase classname="Roles Management" name="Delete Role successfully" time="12.648">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1621,7 +1681,7 @@ When User navigates to Roles in Settings....................................pass
 And user deletes a role.....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Assignment Management" name="Invite User successfully" time="17.88">
+<testcase classname="User Assignment Management" name="Invite User successfully" time="18.089">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1633,7 +1693,7 @@ And User enters user invitation details.....................................pass
 And User sends the invitation...............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Assignment Management" name="Edit User Profile successfully" time="16.054">
+<testcase classname="User Assignment Management" name="Edit User Profile successfully" time="15.933">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1646,7 +1706,7 @@ And User enters updated profile details.....................................pass
 And User saves the profile changes..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Assignment Management" name="Delete User Account successfully" time="14.075">
+<testcase classname="User Assignment Management" name="Delete User Account successfully" time="14.695">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1658,7 +1718,7 @@ And User clicks on Delete Account option....................................pass
 And User confirms delete user action........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Resume Parsing" name="Create candidate by uploading and parsing a resume" time="103.448">
+<testcase classname="Resume Parsing" name="Create candidate by uploading and parsing a resume" time="103.495">
 <failure type="java.lang.AssertionError" message="❌ Resume parsing toast not displayed within timeout.">
 <![CDATA[java.lang.AssertionError: ❌ Resume parsing toast not displayed within timeout.
 	at com.xats.automation.tests.pages.candidate.ResumeParsingPage.verifyParseSuccessToast(ResumeParsingPage.java:105)
@@ -1674,7 +1734,7 @@ Then User navigates to candidates and uploads a resume......................pass
 Then Resume should be parsed successfully...................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Resume Parsing" name="Delete a candidate from the candidates list" time="15.458">
+<testcase classname="Resume Parsing" name="Delete a candidate from the candidates list" time="15.526">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1684,7 +1744,7 @@ And User confirms the deletion..............................................pass
 Then Candidates should be deleted successfully..............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Resume Parsing" name="Bulk upload and parse candidate resume" time="21.33">
+<testcase classname="Resume Parsing" name="Bulk upload and parse candidate resume" time="24.124">
 <system-out><![CDATA[
 Given User is on login page.................................................passed
 When User enters username and password from config file.....................passed
@@ -1693,7 +1753,7 @@ Then User navigates to settings and uploads a resume in bulk................pass
 Then Bulk resumes should be processed successfully..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Resume Parsing" name="Delete a candidate from the candidates list again" time="27.707">
+<testcase classname="Resume Parsing" name="Delete a candidate from the candidates list again" time="27.735">
 <failure type="java.lang.AssertionError" message="❌ Candidate delete toast not displayed within timeout.">
 <![CDATA[java.lang.AssertionError: ❌ Candidate delete toast not displayed within timeout.
 	at com.xats.automation.tests.pages.candidate.ResumeParsingPage.verifyDeleteSuccessToast(ResumeParsingPage.java:193)
