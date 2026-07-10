@@ -2,7 +2,7 @@
 Feature: Candidate Validation
 
 @candidate_negative
-Scenario: Verify mandatory field validation in candidate creation quick modal
+Scenario: Verify mandatory field validation in candidate creation
 
   Given User is on login page
   When User enters username and password from config file

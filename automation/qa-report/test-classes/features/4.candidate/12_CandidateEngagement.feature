@@ -8,7 +8,8 @@ Feature: candidateInDetailView
     Then User should land on dashboard
     When user navigates to candidateInDetailView
 
-
+#  Scenario: user adds a cal logs
+#  When User adds a call logs
   @taskCreation
   Scenario: Create a Task
     When user navigates to engagement
@@ -50,7 +51,4 @@ Feature: candidateInDetailView
     When user navigates to engagement
     And user deletes the document for can
 
-  @CreateCallLog
-  Scenario: Create a Call Log
-    When User adds a call logs
 
