@@ -1,7 +1,7 @@
 @candidate
 Feature: Candidate Creation
 
-  @CreateCandidate
+  @CreateCandidate @smoke
   Scenario: Create a new candidate using the quick modal
     Given User is on login page
     When User enters username and password from config file

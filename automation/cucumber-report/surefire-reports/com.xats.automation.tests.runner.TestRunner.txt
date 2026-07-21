@@ -1,4 +1,198 @@
 -------------------------------------------------------------------------------
 Test set: com.xats.automation.tests.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.08 s -- in com.xats.automation.tests.runner.TestRunner
+Tests run: 78, Failures: 3, Errors: 7, Skipped: 0, Time elapsed: 1565 s <<< FAILURE! -- in com.xats.automation.tests.runner.TestRunner
+clientInDetailView.Delete the note -- Time elapsed: 17.65 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div[4]/div/div[2]/button[2] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:43511}, goog:processID: 2412, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:43511/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 65c232fa4a6f2829e107877a0a1d7413
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.client.ClientInDetailPage.canDeleteNotes(ClientInDetailPage.java:128)
+	at com.xats.automation.tests.stepdefinitions.client.ClientSteps.user_deletes_the_note_for_client(ClientSteps.java:92)
+	at ✽.user deletes the note for client(file:///runner/_work/automation/automation/src/test/resources/features/2.client/06_ClientEngagement.feature:27)
+
+clientInDetailView.Upload a new document -- Time elapsed: 7.281 s <<< FAILURE!
+java.lang.AssertionError: 
+❌ Unexpected toast message: Success
+Signed in successfully!
+	at com.xats.automation.tests.pages.client.ClientInDetailPage.validateSuccessToast(ClientInDetailPage.java:274)
+	at com.xats.automation.tests.pages.client.ClientInDetailPage.canUploadDocument(ClientInDetailPage.java:156)
+	at com.xats.automation.tests.stepdefinitions.client.ClientSteps.user_uploads_a_document_for_client(ClientSteps.java:98)
+	at ✽.user uploads a document for client(file:///runner/_work/automation/automation/src/test/resources/features/2.client/06_ClientEngagement.feature:32)
+
+Job Creation.Create a new Job -- Time elapsed: 26.98 s <<< FAILURE!
+java.lang.AssertionError: 
+❌ Unexpected toast message: Error
+A job with this title already exists for this client.
+	at com.xats.automation.tests.pages.job.JobCreationPage.validateSuccessToast(JobCreationPage.java:419)
+	at com.xats.automation.tests.pages.job.JobCreationPage.createNewJob(JobCreationPage.java:179)
+	at com.xats.automation.tests.stepdefinitions.job.JobSteps.user_navigates_to_Job_and_adds_job(JobSteps.java:20)
+	at ✽.User navigates to job section and adds a new job(file:///runner/_work/automation/automation/src/test/resources/features/3.job/08_JobCreation.feature:10)
+
+candidateInDetailView.Edit a Task -- Time elapsed: 34.25 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[5]/div[2]/div/div[2]/div/div/div/div[2]/div[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:41491}, goog:processID: 9789, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:41491/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6005758e6da75cfe92c6596e4be4675b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canEditTask(CandidateInDetailViewPage.java:283)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_edits_the_task_for_can(CandidateSteps.java:112)
+	at ✽.user edits the task for can(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:20)
+
+candidateInDetailView.Delete the task -- Time elapsed: 22.22 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div[1]/div[1]/table/tbody/tr[1]/td[2]/div/a (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:44097}, goog:processID: 10053, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:44097/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ea0aa91742cef53df269a0bec71ee723
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.click(CandidateInDetailViewPage.java:330)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.candidateTab(CandidateInDetailViewPage.java:71)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_navigates_to_candidateInDetailView(CandidateSteps.java:60)
+	at ✽.user navigates to candidateInDetailView(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:9)
+
+candidateInDetailView.Add a new note -- Time elapsed: 35.43 s <<< ERROR!
+java.lang.RuntimeException: ❌ Timeout: Could not interact with Notes button or input fields.
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canAddNotes(CandidateInDetailViewPage.java:119)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_adds_a_note(CandidateSteps.java:76)
+	at ✽.user adds a note for can(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:31)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/div[5]/div[2]/div[2]/div/div/div/div[2]/div[1] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38071}, goog:processID: 10252, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38071/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c81d8ebec73391ff1a2067efefe4e136
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canAddNotes(CandidateInDetailViewPage.java:92)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_adds_a_note(CandidateSteps.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:148)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:163)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:146)
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+candidateInDetailView.Edit the existing note -- Time elapsed: 21.39 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/div/main/div/div[2]/div/div/div[2]/div/div[2]/div/div/div/div/div/div[4]/div/div[2]/button[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37419}, goog:processID: 10518, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37419/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 83314e67ff35ab12fdba2afe9a0a8bc2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.canEditNotes(CandidateInDetailViewPage.java:136)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_edits_the_note(CandidateSteps.java:82)
+	at ✽.user edits the note for can(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:36)
+
+candidateInDetailView.Create a Call Log -- Time elapsed: 31.78 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.xpath: //label[contains(text(), 'Follow-up Goals')]/..//textarea | //textarea[contains(@placeholder, 'What needs to be discussed next')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:35661}, goog:processID: 11370, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:35661/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 176f841da42ba553039632884a666d0b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.type(CandidateInDetailViewPage.java:334)
+	at com.xats.automation.tests.pages.candidate.CandidateInDetailViewPage.callLogs(CandidateInDetailViewPage.java:420)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.user_add_a_call_logs(CandidateSteps.java:70)
+	at ✽.User adds a call logs(file:///runner/_work/automation/automation/src/test/resources/features/4.candidate/12_CandidateEngagement.feature:55)
+
+Interview Pipeline Management.Interview creation -- Time elapsed: 3.908 s <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <a class="flex items-center justify-center w-10 h-10 rounded-[10px] transition-all duration-500 group relative bg-white/60 text-[#0A0A0A] hover:bg-white opacity-20 grayscale pointer-events-none" data-state="closed" data-slot="tooltip-trigger" href="#">...</a> is not clickable at point (40, 392). Other element would receive the click: <nav class="flex w-full flex-col items-center justify-center gap-3">...</nav>
+  (Session info: chrome=143.0.7499.40)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-124-generic', java.version: '17.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d884e259118e4b546d7fb335d9a56366, clickElement {id=f.BED49189C0C94A4842D3B7CA6103A16B.d.CE8111E226EA8913FF6BBD5DE489E049.e.21}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36481}, goog:processID: 16654, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36481/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (d884e259118e4b546d7fb335d9a56366)] -> xpath: (//aside//a)[2]]
+Session ID: d884e259118e4b546d7fb335d9a56366
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.xats.automation.tests.pages.job.JobInDetailViewPage.click(JobInDetailViewPage.java:100)
+	at com.xats.automation.tests.pages.job.JobInDetailViewPage.clickJobId(JobInDetailViewPage.java:105)
+	at com.xats.automation.tests.stepdefinitions.job.JobSteps.user_navigates_to_job_detail_view(JobSteps.java:54)
+	at ✽.user navigates to job detail view(file:///runner/_work/automation/automation/src/test/resources/features/5.pipeline/19_InterviewPipeline.feature:48)
+
+Resume Parsing.Delete a candidate from the candidates list again -- Time elapsed: 28.44 s <<< FAILURE!
+java.lang.AssertionError: ❌ Candidate delete toast not displayed within timeout.
+	at com.xats.automation.tests.pages.candidate.ResumeParsingPage.verifyDeleteSuccessToast(ResumeParsingPage.java:200)
+	at com.xats.automation.tests.stepdefinitions.candidate.CandidateSteps.verifyCandidatesDeleted(CandidateSteps.java:192)
+	at ✽.Candidates should be deleted successfully(file:///runner/_work/automation/automation/src/test/resources/features/7.resumeParsing/20_ResumeParsing.feature:36)
+

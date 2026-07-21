@@ -1,7 +1,7 @@
 @job
 Feature: Job Creation
 
-  @CreateJob
+  @CreateJob @smoke
   Scenario: Create a new Job
     Given User is on login page
     When User enters username and password from config file

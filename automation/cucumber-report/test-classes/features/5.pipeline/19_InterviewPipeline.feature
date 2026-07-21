@@ -40,7 +40,7 @@ Feature: Interview Pipeline Management
     And User clicks on Skip Stage button
     And User clicks Add Feedback Now, enters feedback "Candidate is ready to skip this stage", and saves
 
-  @interview
+  @interview @smoke
   Scenario: Interview creation
     Given User is on login page
     When User enters username and password from config file

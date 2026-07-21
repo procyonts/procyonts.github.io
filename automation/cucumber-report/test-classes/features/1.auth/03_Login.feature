@@ -1,6 +1,7 @@
-@login
+@login @smoke
 Feature: Login Feature
 
+  @smoke
   Scenario: Valid user logs in successfully
     Given User is on login page
     When User enters username and password from config file

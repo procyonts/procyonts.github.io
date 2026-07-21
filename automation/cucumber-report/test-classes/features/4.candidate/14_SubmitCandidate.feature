@@ -7,7 +7,7 @@ Background:
   When User enters username and password from config file
   And User clicks on login button
 
-  @SubmitFlow
+  @SubmitFlow @smoke
   Scenario: Submit a candidate to a job from the three-dot menu
     When user navigates to submit candidate from job three dots
     And user selects a candidate and clicks next

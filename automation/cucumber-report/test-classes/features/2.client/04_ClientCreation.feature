@@ -1,7 +1,7 @@
 @client
 Feature: Client Creation
 
-  @CreateClient
+  @CreateClient @smoke
   Scenario: Valid user logs in and creates a new client
     Given User is on login page
     When User enters username and password from config file
