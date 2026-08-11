@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.xats.automation.tests.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 72, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1319 s <<< FAILURE! -- in com.xats.automation.tests.runner.TestRunner
+Client Search and Filter Functionality.Filter clients by Status -- Time elapsed: 8.185 s <<< FAILURE!
+java.lang.AssertionError: ❌ Row does not match the filtered status: No data found
+	at com.xats.automation.tests.pages.client.ClientPage.verifyClientStatusFilterResults(ClientPage.java:731)
+	at com.xats.automation.tests.stepdefinitions.client.ClientSteps.filtered_client_results_should_match_the_status_filter(ClientSteps.java:189)
+	at ✽.Filtered client results should match the status filter(file:///runner/_work/automation/automation/src/test/resources/features/2.client/23_ClientSearch.feature:29)
+
+Job Bulk Upload.Upload a CSV file with 2 jobs and verify they are created -- Time elapsed: 20.30 s <<< FAILURE!
+java.lang.AssertionError: ❌ Expected 2 created, but got: 0. Banner: [Upload complete: 0 created, 0 skipped, 2 failed.]
+	at com.xats.automation.tests.pages.job.JobBulkUploadPage.waitForUploadAndVerifyCreated(JobBulkUploadPage.java:301)
+	at com.xats.automation.tests.stepdefinitions.job.JobBulkUploadSteps.upload_should_complete_with_jobs_created(JobBulkUploadSteps.java:34)
+	at ✽.Upload should complete with 2 jobs created(file:///runner/_work/automation/automation/src/test/resources/features/3.job/22_JobBulkUpload.feature:13)
+
