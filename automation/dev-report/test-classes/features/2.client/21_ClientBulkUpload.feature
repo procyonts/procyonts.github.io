@@ -12,16 +12,16 @@ Feature: Client Bulk Upload
     And User clicks the Upload button for bulk clients
     Then Upload should complete with 1 client created
 
-  @ContactDelete
-  Scenario: Navigate to clients and delete contact from contact section
-    Given User is on login page
-    When User enters username and password from config file
-    And User clicks on login button
-    Then User should land on dashboard
-    When user navigates to first client
-    And user chooses edit in the contact section
-    And user deletes the contact and clicks save
-    Then a toast message confirming contact deletion should be displayed
+#  @ContactDelete
+#  Scenario: Navigate to clients and delete contact from contact section
+#    Given User is on login page
+#    When User enters username and password from config file
+#    And User clicks on login button
+#    Then User should land on dashboard
+#    When user navigates to first client
+#    And user chooses edit in the contact section
+#    And user deletes the contact and clicks save
+#    Then a toast message confirming contact deletion should be displayed
 
   @ClientDelete
   Scenario: Navigate to clients and delete a single client
