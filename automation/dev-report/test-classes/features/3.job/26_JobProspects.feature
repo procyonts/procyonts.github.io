@@ -7,7 +7,7 @@ Feature: Job Prospects Feature
     When User enters username and password from config file
     And User clicks on login button
 
-  @AddCandidateToProspects
+  @AddCandidateToProspects @severity=critical
   Scenario: Add an existing candidate to prospects
     When user navigates to first job
     And user clicks prospects tab
@@ -16,14 +16,14 @@ Feature: Job Prospects Feature
     And user clicks add selected to prospects button
     Then candidate added to prospects toast should be displayed
 
-  @TriggerOutreachCall
+  @TriggerOutreachCall @severity=blocker
   Scenario: Trigger outreach call for a prospect
     When user navigates to first job
     And user clicks prospects tab
     And user clicks call icon and selects call now
     Then call placed toast should be displayed
 
-  @SubmitCandidateFromProspect
+  @SubmitCandidateFromProspect @severity=critical
   Scenario: Submit candidate from prospect to a job
     When user navigates to first job
     And user clicks prospects tab
@@ -32,14 +32,14 @@ Feature: Job Prospects Feature
     And user clicks submit candidate button
     Then candidate application submitted toast should be displayed
 
-  @ViewProspectConversationLogs
+  @ViewProspectConversationLogs @severity=normal
   Scenario: View candidate conversation logs via eye button
     When user navigates to first job
     And user clicks prospects tab
     And user clicks eye button on prospect row
     Then voice campaign logs should contain outgoing call or follow up call
 
-  @RemoveProspect
+  @RemoveProspect @severity=minor
   Scenario: Remove prospect from prospect list
     When user navigates to first job
     And user clicks prospects tab

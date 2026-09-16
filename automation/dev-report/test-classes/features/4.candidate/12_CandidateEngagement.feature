@@ -54,3 +54,8 @@ Feature: candidateInDetailView
   Scenario: Create a Call Log
     When User adds a call logs
 
+  @FollowUp
+  Scenario: Follow up
+    When user schedules a follow up
+
+
