@@ -48,3 +48,12 @@ Feature: Interview Pipeline Management
     When user navigates to job detail view
     When user navigates submission page
     And User creates a interview
+
+  @meeting_delete
+  Scenario: meeting delete
+    Given User is on login page
+    When User enters username and password from config file
+    And User clicks on login button
+    When user navigates to job detail view
+    When user navigates submission page
+    And user deletes scheduled meeting in submission
